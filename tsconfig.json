@@ -1,0 +1,17 @@
+{
+  "extends": "@taoyage/configs/shared-tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "outDir": "lib",
+    "paths": {
+      "@/*": ["packages/*"]
+    },
+    "rootDir": "."
+  },
+  "include": ["packages", "stories"],
+  "exclude": ["node_modules"]
+}
