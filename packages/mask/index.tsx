@@ -15,7 +15,7 @@ export interface MaskProps {
   onMaskClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-export const Mask: React.FC<MaskProps> = React.memo(({ visible, maskClassName, maskStyle, onMaskClick }) => {
+const Mask: React.FC<MaskProps> = React.memo(({ visible, maskClassName, maskStyle, onMaskClick }) => {
   const onMask = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       e.stopPropagation();
@@ -44,3 +44,5 @@ export const Mask: React.FC<MaskProps> = React.memo(({ visible, maskClassName, m
 });
 
 export default Mask;
+
+Mask.displayName = 'Mask';

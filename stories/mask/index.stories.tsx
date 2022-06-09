@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import { Mask } from '@/mask';
+import Mask from '@/mask';
 
 const MaskStory: Meta = {
-  title: '反馈/Mas 遮罩层',
+  title: '反馈/Mask 遮罩层',
   component: Mask,
 };
 
