@@ -5,13 +5,13 @@ import { CSSTransition } from 'react-transition-group';
 import './styles/index.scss';
 
 export interface MaskProps {
-  /** Buttons background color */
+  /** 是否可见 */
   visible: boolean;
-  /** 自定义类名 */
+  /** class name */
   maskClassName?: string;
-  /** 自定义类名 */
+  /** style属性 */
   maskStyle?: React.CSSProperties;
-  /** 自定义类名 */
+  /** 点击蒙层触发回调 */
   onMaskClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
