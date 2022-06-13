@@ -1,0 +1,31 @@
+.ygm-spinner {
+  &-loading {
+    border-top: 1px solid;
+    border-right: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-left: 1px solid;
+    border-radius: 50%;
+    z-index: 1001;
+    animation: spinner 0.8s infinite linear;
+    margin: 0 auto;
+  }
+
+  &-loading-color-default {
+    border-top-color: $ygm-color-weak;
+    border-left-color: $ygm-color-weak;
+  }
+
+  &-loading-color-primary {
+    border-top-color: $ygm-color-primary;
+    border-left-color: $ygm-color-primary;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,85 @@
+import React from 'react';
+import { Meta } from '@storybook/react';
+
+import Toast from '@/toast';
+import ToastComponent from '@/toast/toast';
+
+import './index.scss';
+
+const ToastStory: Meta = {
+  title: '反馈/ Toast 轻提示',
+  component: ToastComponent,
+};
+
+export const Basic = () => (
+  <>
+    <div>
+      <h3>基本用法</h3>
+      <button
+        onClick={() =>
+          Toast.show({
+            content: 'Hello World',
+            afterClose: () => {
+              console.log('after');
+            },
+          })
+        }
+      >
+        文字提示
+      </button>
+    </div>
+
+    <div>
+      <h3>图标</h3>
+      <div>
+        <button
+          onClick={() =>
+            Toast.show({
+              icon: 'success',
+              content: 'success',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          成功
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() =>
+            Toast.show({
+              icon: 'fail',
+              content: 'success',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          失败
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() =>
+            Toast.show({
+              icon: 'loading',
+              content: 'loading',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          加载中
+        </button>
+      </div>
+    </div>
+  </>
+);
+
+Basic.storyName = '基础用法';
+
+export default ToastStory;

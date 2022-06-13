@@ -17,7 +17,7 @@ export const Basic = () => {
   const [visible4, setVisible4] = React.useState<boolean>(false);
 
   return (
-    <>
+    <div className="popup-demo">
       <button onClick={() => setVisible1(true)}>底部弹出</button>
       <button onClick={() => setVisible2(true)}>顶部弹出</button>
       <button onClick={() => setVisible3(true)}>左侧弹出</button>
@@ -27,7 +27,7 @@ export const Basic = () => {
       <Popup position="top" visible={visible2} onMaskClick={() => setVisible2(false)} />
       <Popup position="left" visible={visible3} onMaskClick={() => setVisible3(false)} />
       <Popup position="right" visible={visible4} onMaskClick={() => setVisible4(false)} />
-    </>
+    </div>
   );
 };
 
