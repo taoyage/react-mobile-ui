@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 
 import Mask from '@/mask';
+import Button from '@/button';
 
 const MaskStory: Meta = {
   title: '反馈/Mask 遮罩层',
@@ -13,7 +14,7 @@ export const Basic = () => {
 
   return (
     <div>
-      <button onClick={() => setVisible(true)}>显示遮罩层</button>
+      <Button onClick={() => setVisible(true)}>显示遮罩层</Button>
       <Mask visible={visible} onMaskClick={() => setVisible(false)} />
     </div>
   );

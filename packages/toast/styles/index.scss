@@ -17,12 +17,12 @@
     max-width: 70%;
     max-height: 70%;
     overflow: auto;
-    color: white;
+    color: $ygm-color-white;
     word-break: break-all;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     pointer-events: all;
-    font-size: 14px;
+    font-size: $ygm-font-size-medium;
     line-height: 1.5;
     box-sizing: border-box;
 
@@ -44,5 +44,8 @@
     margin-bottom: 8px;
     font-size: 36px;
     line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

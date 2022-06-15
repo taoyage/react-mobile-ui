@@ -3,6 +3,7 @@ import { Meta } from '@storybook/react';
 
 import Toast from '@/toast';
 import ToastComponent from '@/toast/toast';
+import Button from '@/button';
 
 import './index.scss';
 
@@ -12,10 +13,10 @@ const ToastStory: Meta = {
 };
 
 export const Basic = () => (
-  <>
+  <div className="toast-demo">
     <div>
       <h3>基本用法</h3>
-      <button
+      <Button
         onClick={() =>
           Toast.show({
             content: 'Hello World',
@@ -26,58 +27,58 @@ export const Basic = () => (
         }
       >
         文字提示
-      </button>
+      </Button>
     </div>
 
     <div>
       <h3>图标</h3>
-      <div>
-        <button
-          onClick={() =>
-            Toast.show({
-              icon: 'success',
-              content: 'success',
-              afterClose: () => {
-                console.log('after');
-              },
-            })
-          }
-        >
-          成功
-        </button>
-      </div>
-      <div>
-        <button
-          onClick={() =>
-            Toast.show({
-              icon: 'fail',
-              content: 'success',
-              afterClose: () => {
-                console.log('after');
-              },
-            })
-          }
-        >
-          失败
-        </button>
-      </div>
-      <div>
-        <button
-          onClick={() =>
-            Toast.show({
-              icon: 'loading',
-              content: 'loading',
-              afterClose: () => {
-                console.log('after');
-              },
-            })
-          }
-        >
-          加载中
-        </button>
-      </div>
+
+      <Button
+        color="success"
+        onClick={() =>
+          Toast.show({
+            icon: 'success',
+            content: 'success',
+            afterClose: () => {
+              console.log('after');
+            },
+          })
+        }
+      >
+        成功
+      </Button>
+
+      <Button
+        color="warning"
+        onClick={() =>
+          Toast.show({
+            icon: 'fail',
+            content: 'faild',
+            afterClose: () => {
+              console.log('after');
+            },
+          })
+        }
+      >
+        失败
+      </Button>
+
+      <Button
+        color="primary"
+        onClick={() =>
+          Toast.show({
+            icon: 'loading',
+            content: 'loading',
+            afterClose: () => {
+              console.log('after');
+            },
+          })
+        }
+      >
+        加载中
+      </Button>
     </div>
-  </>
+  </div>
 );
 
 Basic.storyName = '基础用法';

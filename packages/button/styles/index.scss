@@ -1,0 +1,58 @@
+.ygm-button {
+  color: $ygm-color-text;
+  background-color: $ygm-color-white;
+  font-size: $ygm-font-size-medium-x;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 7px 12px;
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+  border-radius: 4px;
+  user-select: none;
+  border: 1px solid $ygm-border-color;
+  color: $ygm-color-white;
+
+  &-default {
+    background-color: $ygm-color-white;
+    border-color: $ygm-border-color;
+    color: $ygm-color-text;
+  }
+
+  &-primary {
+    border-color: $ygm-color-primary;
+    background-color: $ygm-color-primary;
+  }
+
+  &-success {
+    border-color: $ygm-color-success;
+    background-color: $ygm-color-success;
+  }
+
+  &-danger {
+    border-color: $ygm-color-danger;
+    background-color: $ygm-color-danger;
+  }
+
+  &-warning {
+    border-color: $ygm-color-warning;
+    background-color: $ygm-color-warning;
+  }
+
+  &-small {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: $ygm-font-size-medium;
+  }
+
+  &-middle {
+    padding: 7px 12px;
+  }
+
+  &-large {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: $ygm-font-size-large;
+  }
+}

@@ -1,0 +1,24 @@
+.card-wrap {
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 16px;
+  width: 375px;
+
+  &-title {
+    color: blue;
+  }
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+
+    &-item {
+      box-sizing: border-box;
+      width: 100px;
+      height: 150px;
+      background-color: #eee;
+    }
+  }
+}

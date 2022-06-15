@@ -1,0 +1,29 @@
+.ygm-card {
+  background: $ygm-color-white;
+  border-radius: 13px;
+  overflow: hidden;
+
+  &-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 13px;
+
+    &-title {
+      font-size: $ygm-font-size-large;
+      font-weight: 700;
+    }
+
+    &-extra {
+      font-size: $ygm-font-size-medium;
+    }
+  }
+
+  &-body {
+    position: relative;
+    padding: 0 13px 13px 13px;
+    box-sizing: border-box;
+  }
+}

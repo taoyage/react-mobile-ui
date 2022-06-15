@@ -1,0 +1,37 @@
+.ygm-nav-bar {
+  height: 45px;
+  border-bottom: none;
+  padding: 0 16px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  background-color: $ygm-color-white;
+  box-sizing: border-box;
+
+  &-left,
+  &-right {
+    flex: 1;
+  }
+
+  &-title {
+    flex: auto;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-left {
+    font-size: $ygm-font-size-medium;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-icon {
+      margin-right: 4px;
+    }
+  }
+
+  &-right {
+    text-align: right;
+  }
+}

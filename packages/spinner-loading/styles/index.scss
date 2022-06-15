@@ -7,7 +7,6 @@
     border-radius: 50%;
     z-index: 1001;
     animation: spinner 0.8s infinite linear;
-    margin: 0 auto;
   }
 
   &-loading-color-default {
@@ -18,6 +17,11 @@
   &-loading-color-primary {
     border-top-color: $ygm-color-primary;
     border-left-color: $ygm-color-primary;
+  }
+
+  &-loading-color-white {
+    border-top-color: $ygm-color-white;
+    border-left-color: $ygm-color-white;
   }
 }
 

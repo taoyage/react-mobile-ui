@@ -2,6 +2,7 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 
 import Popup from '@/popup';
+import Button from '@/button';
 
 import './index.scss';
 
@@ -18,10 +19,10 @@ export const Basic = () => {
 
   return (
     <div className="popup-demo">
-      <button onClick={() => setVisible1(true)}>底部弹出</button>
-      <button onClick={() => setVisible2(true)}>顶部弹出</button>
-      <button onClick={() => setVisible3(true)}>左侧弹出</button>
-      <button onClick={() => setVisible4(true)}>右侧弹出</button>
+      <Button onClick={() => setVisible1(true)}>底部弹出</Button>
+      <Button onClick={() => setVisible2(true)}>顶部弹出</Button>
+      <Button onClick={() => setVisible3(true)}>左侧弹出</Button>
+      <Button onClick={() => setVisible4(true)}>右侧弹出</Button>
 
       <Popup position="bottom" visible={visible1} onMaskClick={() => setVisible1(false)} />
       <Popup position="top" visible={visible2} onMaskClick={() => setVisible2(false)} />

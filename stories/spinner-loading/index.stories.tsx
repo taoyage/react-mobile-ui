@@ -12,7 +12,7 @@ const LoadingStory: Meta = {
 
 export const Basic = () => {
   return (
-    <>
+    <div className="loading-wrap">
       <div>
         <h3>基本用法</h3>
         <SpinnerLoading />
@@ -33,7 +33,7 @@ export const Basic = () => {
           <SpinnerLoading size={48} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

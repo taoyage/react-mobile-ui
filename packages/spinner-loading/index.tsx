@@ -5,13 +5,14 @@ import './styles/index.scss';
 
 export interface SpinnerLoadingProps {
   type?: 'spinner';
-  color?: 'default' | 'primary' | string;
+  color?: 'default' | 'primary' | 'white' | string;
   size?: number;
 }
 
-const colorRecord: Record<string, string> = {
-  default: 'var(--adm-color-weak)',
-  primary: 'var(--adm-color-primary)',
+const colorRecord: Record<string, boolean> = {
+  default: true,
+  primary: true,
+  white: true,
 };
 
 const SpinnerLoading: React.FC<SpinnerLoadingProps> = React.memo((props) => {

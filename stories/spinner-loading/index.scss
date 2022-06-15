@@ -1,7 +1,11 @@
-.row {
-  display: flex;
+.loading-wrap {
+  width: 375px;
 
-  div {
-    margin-right: 20px;
+  .row {
+    display: flex;
+
+    div {
+      margin-right: 20px;
+    }
   }
 }
