@@ -1,3 +1,6 @@
+export { default as Button } from '@/button';
+export type { ButtonProps } from '@/button';
+
 export { default as Mask } from '@/mask';
 export type { MaskProps } from '@/mask';
 
@@ -16,5 +19,5 @@ export type { NavBarProps } from '@/nav-bar';
 export { default as Card } from '@/card';
 export type { CardProps } from '@/card';
 
-export { default as Button } from '@/button';
-export type { ButtonProps } from '@/button';
+export { default as Image } from '@/image';
+export type { ImageProps } from '@/image';

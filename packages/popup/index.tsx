@@ -2,7 +2,9 @@ import React from 'react';
 import cx from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
-import Mask from '../mask';
+import useScrollLock from '@/hooks/useScrollLock';
+
+import Mask from '@/mask';
 
 import './styles/index.scss';
 
@@ -21,6 +23,7 @@ export interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = React.memo((props) => {
+  useScrollLock(props.visible);
   return (
     <>
       <Mask visible={props.visible} onMaskClick={props.onMaskClick} />

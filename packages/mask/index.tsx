@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
+import useScrollLock from '@/hooks/useScrollLock';
+
 import './styles/index.scss';
 
 export interface MaskProps {
@@ -16,6 +18,8 @@ export interface MaskProps {
 }
 
 const Mask: React.FC<MaskProps> = React.memo(({ visible, maskClassName, maskStyle, onMaskClick }) => {
+  useScrollLock(visible);
+
   const onMask = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       e.stopPropagation();
