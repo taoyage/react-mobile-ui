@@ -1,0 +1,20 @@
+.demo-countdown-num {
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #ee0a24;
+  padding: 10px;
+}
+
+.demo-countdown-symbol {
+  color: #ee0a24;
+  height: 14px;
+  margin: 0 2px;
+  vertical-align: middle;
+  display: inline-block;
+}

@@ -21,3 +21,6 @@ export type { CardProps } from '@/card';
 
 export { default as Image } from '@/image';
 export type { ImageProps } from '@/image';
+
+export { default as Countdown } from '@/countdown';
+export type { CountdownProps } from '@/countdown';
