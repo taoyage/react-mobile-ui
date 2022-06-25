@@ -24,3 +24,9 @@ export type { ImageProps } from '@/image';
 
 export { default as Countdown } from '@/countdown';
 export type { CountdownProps } from '@/countdown';
+
+export { default as PullToRefresh } from '@/pull-to-refresh';
+export type { PullToRefreshProps } from '@/pull-to-refresh';
+
+export { default as Space } from '@/space';
+export type { SpaceProps } from '@/space';

@@ -1,0 +1,22 @@
+.ygm-pull-to-refresh {
+  overflow: hidden;
+  user-select: none;
+  &-head {
+    position: relative;
+    height: 100%;
+    transition-property: transform;
+
+    &-content {
+      font-size: $ygm-font-size-small;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      color: $ygm-color-weak;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+    }
+  }
+}
