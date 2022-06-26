@@ -1,6 +1,6 @@
-import { IPullStatus } from './types';
+import { TPullStatus, TPullKey } from './types';
 
-export const PULL_STATUS: IPullStatus = {
+export const PULL_STATUS: Record<TPullKey, TPullStatus> = {
   PULLING: 'pulling',
   CAN_RELEASE: 'canRelease',
   REFRESHING: 'refreshing',

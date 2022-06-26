@@ -1,0 +1,39 @@
+.ygm-swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  touch-action: pan-y;
+
+  &-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: hidden;
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      flex-wrap: nowrap;
+      display: flex;
+      overflow: hidden;
+    }
+  }
+
+  &-slide {
+    width: 100%;
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    white-space: unset;
+  }
+
+  &-indicator {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

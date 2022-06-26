@@ -1,0 +1,23 @@
+.ygm-swiper-page-indicator {
+  display: flex;
+  width: auto;
+
+  &-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $ygm-color-weak;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-active {
+      width: 13px;
+      height: 5px;
+      border-radius: 2px;
+      background-color: $ygm-color-primary;
+    }
+  }
+}

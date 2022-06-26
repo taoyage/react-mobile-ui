@@ -1,5 +1,2 @@
 export type TPullStatus = 'pulling' | 'canRelease' | 'refreshing' | 'complete';
-
-export interface IPullStatus {
-  [key: string]: TPullStatus;
-}
+export type TPullKey = 'PULLING' | 'CAN_RELEASE' | 'REFRESHING' | 'COMPLETE';
