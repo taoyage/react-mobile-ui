@@ -1,10 +1,10 @@
 {
   "name": "@taoyage/react-mobile-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react mobile components lib",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "lib/typing/index.d.ts",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
