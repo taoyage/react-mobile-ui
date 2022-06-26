@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import './index.scss';
+import './styles/index.scss';
 
 export interface SpaceProps {
   /** 间距方向 */

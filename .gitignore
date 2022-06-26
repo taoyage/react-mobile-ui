@@ -2,4 +2,5 @@ node_modules
 esm
 cjs
 lib
+es
 .idea/

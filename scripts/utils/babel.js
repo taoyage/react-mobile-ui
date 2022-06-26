@@ -60,6 +60,7 @@ module.exports = function (opts) {
         base: srcPath,
       })
       .pipe(gulpIf((f) => isTsFile(f.path), gulpAlias({ configuration: tsConfig })))
+      .pipe(gulpIf((f) => isStyleFile(f.path), gulpAlias({ configuration: tsConfig })))
       .pipe(
         gulpIf(
           (f) => isStyleFile(f.path),
@@ -101,7 +102,7 @@ module.exports = function (opts) {
         base: srcPath,
       })
       .pipe(gulpIf((f) => isTsFile(f.path), gulpAlias({ configuration: tsConfig })))
-      .pipe(gulpIf((f) => isTsFile(f.path), gulpTs(tsConfig)))
+      .pipe(gulpIf((f) => isTsFile(f.path), gulpTs({ ...tsConfig, files: [path.join(cwd, 'typings.d.ts')] })))
       .pipe(vfs.dest(targetPath));
   }
 
