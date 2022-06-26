@@ -1,5 +1,5 @@
 {
-  "name": "react-mobile-ui",
+  "name": "@taoyage/react-mobile-ui",
   "version": "1.0.0",
   "description": "A react mobile components lib",
   "main": "lib/index.js",
@@ -31,6 +31,10 @@
     "es/**/*.scss",
     "lib/**/*.scss"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taoyage/react-mobile-ui.git"
+  },
   "author": "taoyage",
   "license": "MIT",
   "devDependencies": {
