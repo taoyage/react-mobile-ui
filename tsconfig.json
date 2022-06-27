@@ -14,6 +14,5 @@
   },
   "include": ["packages", "stories"],
   "exclude": ["node_modules"],
-  "files": ["./packages/typings/index.d.ts"],
-  "typeRoots": ["./packages/typings"]
+  "files": ["./typings.d.ts"]
 }

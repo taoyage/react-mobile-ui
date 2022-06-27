@@ -1,8 +1,7 @@
 import React from 'react';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
-// @ts-ignore
-import placeholderImg from '@/image/placeholder.png';
+import placeholder from '@/image/placeholder.png';
 
 export interface ImageProps {
   src: string;
@@ -45,7 +44,7 @@ Image.defaultProps = {
   height: '100%',
   lazy: false,
   fit: 'cover',
-  loading: placeholderImg,
+  loading: placeholder,
 };
 
 Image.displayName = 'Image';

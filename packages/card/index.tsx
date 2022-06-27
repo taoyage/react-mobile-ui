@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = React.memo((props) => {
     return (
       <div className={cx('ygm-card-header', props.headerClassName)} onClick={props.onHeaderClick}>
         <div className={cx('ygm-card-header-title', props.titleClassName)}>{props.title}</div>
-        <div className={cx('ygm-card-hader-extra', props.extraClassName)}>{props.extra}</div>
+        <div className={cx('ygm-card-header-extra', props.extraClassName)}>{props.extra}</div>
       </div>
     );
   }, [

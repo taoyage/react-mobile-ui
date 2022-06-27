@@ -1,0 +1,71 @@
+@import '../../styles/variable.scss';
+
+$class-prefix-space: 'ygm-tabs';
+
+.#{$class-prefix-space} {
+  position: relative;
+  user-select: none;
+
+  &-tab-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-card {
+      .#{$class-prefix-space}-tab-active {
+        background: $ygm-color-primary;
+
+        .#{$class-prefix-space}-tab-title {
+          color: $ygm-color-white;
+        }
+      }
+    }
+
+    &-card {
+      background-color: $ygm-border-color;
+      .#{$class-prefix-space}-tab-title {
+        color: #838a96;
+      }
+    }
+  }
+
+  &-tab {
+    flex: auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+
+    &-title {
+      margin: auto;
+      font-size: $ygm-font-size-medium;
+      white-space: nowrap;
+      width: min-content;
+      position: relative;
+      padding: 8px 0 10px;
+    }
+
+    &-active {
+      .#{$class-prefix-space}-tab-title {
+        color: $ygm-color-primary;
+      }
+    }
+  }
+
+  &-tab-line {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: $ygm-color-primary;
+    border-radius: 2px;
+  }
+
+  &-content {
+    padding: 12px;
+  }
+}

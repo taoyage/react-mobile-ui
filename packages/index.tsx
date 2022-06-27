@@ -30,3 +30,6 @@ export type { PullToRefreshProps } from '@/pull-to-refresh';
 
 export { default as Space } from '@/space';
 export type { SpaceProps } from '@/space';
+
+export { default as Tabs } from '@/tabs';
+export type { TabsProps, TabProps } from '@/tabs';
