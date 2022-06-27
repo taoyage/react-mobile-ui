@@ -1,6 +1,7 @@
 import React from 'react';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
+// @ts-ignore
 import placeholder from '@/image/placeholder.png';
 
 export interface ImageProps {
