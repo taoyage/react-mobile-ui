@@ -35,7 +35,7 @@ export { default as Tabs } from '@/tabs';
 export type { TabsProps, TabProps } from '@/tabs';
 
 export { default as Swiper } from '@/swiper';
-export type { SwiperProps, SwiperItemProps } from '@/swiper';
+export type { SwiperProps, SwiperItemProps, SwiperRef } from '@/swiper';
 
 export { default as Grid } from '@/grid';
 export type { GridProps, GridItemProps } from '@/grid';

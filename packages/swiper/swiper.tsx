@@ -12,9 +12,16 @@ export interface SwiperProps {
   children: React.ReactElement | React.ReactElement[];
   showIndicator?: boolean;
   indicatorClassName?: string;
+  onIndexChange?: (index: number) => void;
 }
 
-const Swiper: React.FC<SwiperProps> = React.memo((props) => {
+export interface SwiperRef {
+  swipeTo: (index: number) => void;
+  swipeNext: () => void;
+  swipePrev: () => void;
+}
+
+const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   const [currentIndex, setCurrentIndex] = React.useState<number>(props.defaultIndex || 0);
   const [dragging, setDragging] = React.useState<boolean>(false);
 
@@ -80,9 +87,14 @@ const Swiper: React.FC<SwiperProps> = React.memo((props) => {
     (index: number) => {
       const targetIndex = modulus(index, count);
       setCurrentIndex(targetIndex);
+      props.onIndexChange?.(targetIndex);
     },
-    [count]
+    [count, props]
   );
+
+  const swipePrev = React.useCallback(() => {
+    swipeTo(currentIndex - 1);
+  }, [currentIndex, swipeTo]);
 
   const swipeNext = React.useCallback(() => {
     swipeTo(currentIndex + 1);
@@ -130,6 +142,12 @@ const Swiper: React.FC<SwiperProps> = React.memo((props) => {
     },
     [onTouchEnd, onTouchMove]
   );
+
+  React.useImperativeHandle(ref, () => ({
+    swipeTo,
+    swipeNext,
+    swipePrev,
+  }));
 
   React.useEffect(() => {
     if (!props.autoplay || dragging) return;

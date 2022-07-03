@@ -1,7 +1,7 @@
 import InternalSwiper from './swiper';
 import SwiperItem from './swiper-item';
 
-export type { SwiperProps } from './swiper';
+export type { SwiperProps, SwiperRef } from './swiper';
 export type { SwiperItemProps } from './swiper-item';
 
 type InternalSwiperType = typeof InternalSwiper;
