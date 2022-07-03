@@ -1,6 +1,6 @@
 {
   "name": "@taoyage/react-mobile-ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A react mobile components lib",
   "main": "lib/index.js",
   "module": "es/index.js",
