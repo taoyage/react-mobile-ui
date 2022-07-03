@@ -111,18 +111,15 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
         ))}
       </div>
 
-      {panes.map(
-        (child) =>
-          activeKey === child.key && (
-            <div
-              key={child.key}
-              className={cx(`${classPrefix}-content`, props.tabContentClassName)}
-              style={{ display: activeKey === child.key ? 'block' : 'none' }}
-            >
-              {child}
-            </div>
-          )
-      )}
+      {panes.map((child) => (
+        <div
+          key={child.key}
+          className={cx(`${classPrefix}-content`, props.tabContentClassName)}
+          style={{ display: activeKey === child.key ? 'block' : 'none' }}
+        >
+          {child}
+        </div>
+      ))}
     </div>
   );
 });
