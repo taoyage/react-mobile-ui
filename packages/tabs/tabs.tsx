@@ -14,6 +14,7 @@ export interface TabsProps {
   type?: 'line' | 'card';
   tabActiveClassName?: string;
   tabListClassName?: string;
+  tabContentClassName?: string;
 }
 
 const classPrefix = 'ygm-tabs';
@@ -113,7 +114,7 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
       {panes.map(
         (child) =>
           activeKey === child.key && (
-            <div key={child.key} className={`${classPrefix}-content`}>
+            <div key={child.key} className={cx(`${classPrefix}-content`, props.tabContentClassName)}>
               {child}
             </div>
           )
