@@ -10,18 +10,20 @@ export interface GridProps {
   children?: React.ReactNode;
 }
 
+const formatGap = (gap: string | number) => (typeof gap === 'number' ? `${gap}px` : gap);
+
 const Grid: React.FC<GridProps> = React.memo((props) => {
   const style = React.useMemo(() => {
     if (props.gap !== undefined) {
       if (Array.isArray(props.gap)) {
         const [gapH, gapV] = props.gap;
         return {
-          '--gap-horizontal': `${gapH}px`,
-          '--gap-vertical': `${gapV}px`,
+          '--gap-horizontal': formatGap(gapH),
+          '--gap-vertical': formatGap(gapV),
           '--columns': props.columns,
         };
       } else {
-        return { '--gap': `${props.gap}px`, '--columns': props.columns };
+        return { '--gap': formatGap(props.gap), '--columns': props.columns };
       }
     }
     return { '--columns': props.columns };

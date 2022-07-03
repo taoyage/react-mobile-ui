@@ -23,17 +23,19 @@ export interface SpaceProps {
 
 const classPrefix = `ygm-space`;
 
+const formatGap = (gap: string | number) => (typeof gap === 'number' ? `${gap}px` : gap);
+
 const Space: React.FC<SpaceProps> = React.memo((props) => {
   const style = React.useMemo(() => {
     if (props.gap) {
       if (Array.isArray(props.gap)) {
         const [gapH, gapV] = props.gap;
         return {
-          '--gap-vertical': `${gapV}px`,
-          '--gap-horizontal': `${gapH}px`,
+          '--gap-vertical': formatGap(gapV),
+          '--gap-horizontal': formatGap(gapH),
         };
       }
-      return { '--gap': `${props.gap}px` };
+      return { '--gap': formatGap(props.gap) };
     }
     return {};
   }, [props.gap]);
