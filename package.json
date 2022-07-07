@@ -9,6 +9,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
+    "build-storybook-docs": "build-storybook --docs",
+    "docs:deploy": "gh-pages -d storybook-static",
+    "deploy": "npm run build-storybook-docs && npm run docs:deploy",
     "build": "node ./scripts/build.js",
     "prepare": "husky install"
   },
@@ -59,6 +62,7 @@
     "@types/react-transition-group": "^4.4.4",
     "babel-loader": "^8.2.5",
     "chalk": "^4.0.0",
+    "gh-pages": "^4.0.0",
     "gulp-if": "^3.0.0",
     "gulp-image": "^5.1.0",
     "gulp-sass": "^5.1.0",
