@@ -1,0 +1,10 @@
+@import '../../styles/variable.scss';
+
+$class-prefix-space: 'ygm-sidebar';
+
+.#{$class-prefix-tabs} {
+  --height: 100%;
+  --width: 105px;
+  --item-border-radius: 8px;
+  --background-color: ;
+}

@@ -1,8 +1,8 @@
 @import '../../styles/variable.scss';
 
-$class-prefix-space: 'ygm-tabs';
+$class-prefix-tabs: 'ygm-tabs';
 
-.#{$class-prefix-space} {
+.#{$class-prefix-tabs} {
   position: relative;
   user-select: none;
 
@@ -19,10 +19,10 @@ $class-prefix-space: 'ygm-tabs';
     }
 
     &-card {
-      .#{$class-prefix-space}-tab-active {
+      .#{$class-prefix-tabs}-tab-active {
         background: $ygm-color-primary;
 
-        .#{$class-prefix-space}-tab-title {
+        .#{$class-prefix-tabs}-tab-title {
           color: $ygm-color-white;
         }
       }
@@ -30,7 +30,7 @@ $class-prefix-space: 'ygm-tabs';
 
     &-card {
       background-color: $ygm-border-color;
-      .#{$class-prefix-space}-tab-title {
+      .#{$class-prefix-tabs}-tab-title {
         color: #838a96;
       }
     }
@@ -51,7 +51,7 @@ $class-prefix-space: 'ygm-tabs';
     }
 
     &-active {
-      .#{$class-prefix-space}-tab-title {
+      .#{$class-prefix-tabs}-tab-title {
         color: $ygm-color-primary;
       }
     }

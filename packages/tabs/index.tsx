@@ -1,17 +1,17 @@
-import Tabs from '@/tabs/tabs';
+import InternalTabs from '@/tabs/tabs';
 import Tab from '@/tabs/tab';
 
 export type { TabsProps } from '@/tabs/tabs';
 export type { TabProps } from '@/tabs/tab';
 
-type TTabs = typeof Tabs;
+type InternalTabsType = typeof InternalTabs;
 
-export interface ITabs extends TTabs {
+export interface TabsInterface extends InternalTabsType {
   Tab: typeof Tab;
 }
 
-const MyTabs: ITabs = Tabs as ITabs;
+const Tabs = InternalTabs as TabsInterface;
 
-MyTabs.Tab = Tab;
+Tabs.Tab = Tab;
 
-export default MyTabs;
+export default Tabs;

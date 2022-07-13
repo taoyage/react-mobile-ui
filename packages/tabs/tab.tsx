@@ -8,7 +8,7 @@ export interface TabProps {
 }
 
 const Tab: React.FC<TabProps> = React.memo((props) => {
-  return <div>{props.children}</div>;
+  return props.children as React.ReactElement;
 });
 
 Tab.displayName = 'Tab';
