@@ -22,7 +22,10 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
     items.push(child);
   });
 
-  const onItem = React.useCallback(() => {}, []);
+  const onSetActive = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const key = (e.target as HTMLElement).dataset['key'];
+    setActiveKey(key as string);
+  }, []);
 
   return (
     <div className={classPrefix}>
@@ -36,7 +39,8 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
                 [`${classPrefix}-item-active`]: active,
               })}
               key={item.key}
-              onClick={onItem}
+              data-key={item.key}
+              onClick={onSetActive}
             >
               <div className={`${classPrefix}-item-title`}>{item.props.title}</div>
             </div>
