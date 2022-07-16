@@ -39,3 +39,12 @@ export type { SwiperProps, SwiperItemProps, SwiperRef } from '@/swiper';
 
 export { default as Grid } from '@/grid';
 export type { GridProps, GridItemProps } from '@/grid';
+
+// hooks
+export { default as useMount } from '@/hooks/useMount';
+export { default as useEffectOnce } from '@/hooks/useEffectOnce';
+export { default as useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+export { default as useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
+export { default as useScrollLock } from '@/hooks/useScrollLock';
+export { default as useUpdateEffect } from '@/hooks/useUpdateEffect';
+export { default as useUpdateIsomorphicLayoutEffect } from '@/hooks/useUpdateIsomorphicLayoutEffect';

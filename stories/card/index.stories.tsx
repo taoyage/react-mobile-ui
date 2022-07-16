@@ -5,6 +5,9 @@ import { RightOutline } from 'antd-mobile-icons';
 
 import Card from '@/card';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const CardStory: Meta = {
@@ -14,22 +17,19 @@ const CardStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div className="card-wrap">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法" style={{ padding: 10 }}>
         <Card title="标题">内容</Card>
-      </div>
-      <div>
-        <h3>只有标题</h3>
+      </DemoBlock>
+      <DemoBlock title="只有标题" style={{ padding: 10 }}>
         <Card title="标题" />
-      </div>
-      <div>
-        <h3>只有内容</h3>
-        <Card>内容</Card>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>自定义卡片样式</h3>
+      <DemoBlock title="只有内容" style={{ padding: 10 }}>
+        <Card>内容</Card>
+      </DemoBlock>
+
+      <DemoBlock title="自定义卡片样式" style={{ padding: 10 }}>
         <Card titleClassName="card-wrap-title" bodyClassName="card-wrap-body" title="标题" extra={<RightOutline />}>
           <div className="card-wrap-body-item">
             <div className="card-wrap-body-item-inner" />
@@ -41,8 +41,8 @@ export const Basic = () => {
             <div className="card-wrap-body-item-inner" />
           </div>
         </Card>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

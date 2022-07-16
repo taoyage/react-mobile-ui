@@ -3,10 +3,13 @@ import cx from 'classnames';
 
 import SidebarItem from '@/sidebar/sidebar-item';
 
+import './styles/index.scss';
+
 export interface SidebarProps {
   activeKey: string;
   onChange?: (key: string) => void;
   children?: React.ReactNode;
+  style?: React.CSSProperties & Partial<Record<'--width' | '--height' | '--background-color', string>>;
 }
 
 const classPrefix = `ygm-sidebar`;
@@ -29,10 +32,9 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
 
   return (
     <div className={classPrefix}>
-      <div className={`${classPrefix}-items`}>
+      <div className={`${classPrefix}-items`} style={props.style}>
         {items.map((item) => {
           const active = item.key === activeKey;
-
           return (
             <div
               className={cx(`${classPrefix}-item`, {
@@ -42,17 +44,25 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
               data-key={item.key}
               onClick={onSetActive}
             >
-              <div className={`${classPrefix}-item-title`}>{item.props.title}</div>
+              <div className={`${classPrefix}-item-title`} data-key={item.key}>
+                {item.props.title}
+              </div>
             </div>
           );
         })}
       </div>
 
-      {items.map((item) => (
-        <div key={item.key} className={`${classPrefix}-content`}>
-          {item.props.children}
-        </div>
-      ))}
+      <div className={`${classPrefix}-content`}>
+        {items.map((item) => (
+          <div
+            key={item.key}
+            className={`${classPrefix}-content-item`}
+            style={{ display: activeKey === item.key ? 'block' : 'none' }}
+          >
+            {item.props.children}
+          </div>
+        ))}
+      </div>
     </div>
   );
 });

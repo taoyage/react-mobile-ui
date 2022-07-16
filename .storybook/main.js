@@ -43,7 +43,7 @@ module.exports = {
           },
         },
       ],
-      include: [resolve('stories'), resolve('packages')],
+      include: [resolve('stories'), resolve('packages'), resolve('demos')],
     });
 
     config.plugins.push(

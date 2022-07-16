@@ -1,0 +1,18 @@
+.demo-wrap {
+  background-color: #eee;
+  border-radius: 4px;
+  width: 375px;
+  border: 1px solid #dce1e5;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-block-header {
+  padding: 10px;
+}
+
+.demo-block-content {
+}
