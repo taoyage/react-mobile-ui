@@ -34,7 +34,7 @@ $class-prefix-space: 'ygm-space';
       margin-bottom: var(--gap-vertical);
 
       &:last-child {
-        margin-bottom: var(--gap-vertical);
+        margin-bottom: 0;
       }
     }
   }
