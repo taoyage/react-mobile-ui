@@ -8,7 +8,7 @@ import DemoBlock from '../../demos/demo-block';
 
 import './index.scss';
 
-const LoadingStory: Meta = {
+const SidebarStory: Meta = {
   title: '导航/Sidebar 侧边导航',
   component: Sidebar,
 };
@@ -55,4 +55,4 @@ export const Basic = () => {
 
 Basic.storyName = '基本用法';
 
-export default LoadingStory;
+export default SidebarStory;
