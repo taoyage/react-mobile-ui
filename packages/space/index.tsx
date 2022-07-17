@@ -61,6 +61,7 @@ const Space: React.FC<SpaceProps> = React.memo((props) => {
 
 Space.defaultProps = {
   direction: 'horizontal',
+  block: true,
 };
 
 Space.displayName = 'Space';
