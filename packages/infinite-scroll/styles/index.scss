@@ -1,0 +1,10 @@
+@import '../../styles/variable.scss';
+
+.ygm-infinite-scroll {
+  &-load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+}
