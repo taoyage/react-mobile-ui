@@ -9,6 +9,7 @@ export interface InputProps {
   id?: string;
   value?: string;
   placeholder?: string;
+  className?: string;
   /** 是否显示清除icon */
   clearable?: boolean;
 
