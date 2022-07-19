@@ -19,7 +19,6 @@ $class-prefix-input: 'ygm-input';
 
   &-disabled {
     opacity: 0.4;
-    cursor: not-allowed;
   }
 
   &-element {
@@ -39,6 +38,11 @@ $class-prefix-input: 'ygm-input';
     outline: none;
     appearance: none;
     text-align: var(--text-align);
+
+    &::placeholder {
+      color: var(--placeholder-color);
+      font-family: inherit;
+    }
 
     &:-webkit-autofill {
       background-color: transparent;

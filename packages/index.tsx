@@ -43,6 +43,15 @@ export type { GridProps, GridItemProps } from '@/grid';
 export type { ErrorBlockProps } from '@/error-block';
 export { default as ErrorBlock } from '@/error-block';
 
+export type { InputProps } from '@/input';
+export { default as Input } from '@/input';
+
+export type { SidebarProps } from '@/sidebar';
+export { default as Sidebar } from '@/sidebar';
+
+export type { SearchBarProps } from '@/search-bar';
+export { default as SearchBar } from '@/search-bar';
+
 // hooks
 export { default as useMount } from '@/hooks/useMount';
 export { default as useEffectOnce } from '@/hooks/useEffectOnce';
