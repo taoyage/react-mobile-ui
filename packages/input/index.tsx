@@ -5,6 +5,8 @@ import { CloseCircleFill } from 'antd-mobile-icons';
 
 import './styles/index.scss';
 
+type TStyle = Partial<Record<'--color' | '--placeholder-color', string>>;
+
 export interface InputProps {
   id?: string;
   value?: string;
@@ -12,6 +14,7 @@ export interface InputProps {
   className?: string;
   /** 是否显示清除icon */
   clearable?: boolean;
+  style?: React.CSSProperties & TStyle;
 
   autoFocus?: boolean;
   disabled?: boolean;
@@ -64,6 +67,7 @@ const Input: React.FC<InputProps> = React.memo((props) => {
     <div className={cx(classPrefix, { [`${classPrefix}-disabled`]: props.disabled })}>
       <input
         id={props.id}
+        style={props.style}
         className={`${classPrefix}-element`}
         placeholder={props.placeholder}
         autoFocus={props.autoFocus}
@@ -117,6 +121,9 @@ Input.defaultProps = {
   value: '',
   id: 'ygm-input',
   type: 'text',
+  autoComplete: 'off',
+  autoCapitalize: 'off',
+  autoCorrect: 'off',
 };
 
 Input.displayName = 'Input';

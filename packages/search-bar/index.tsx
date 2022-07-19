@@ -3,7 +3,13 @@ import Input from '@/input';
 
 import { SearchOutline } from 'antd-mobile-icons';
 
+import './styles/index.scss';
+
 const classPrefix = `ygm-search-bar`;
+
+type TStyle = Partial<
+  Record<'--color' | '--background' | '--search-background' | '--border-radius' | '--placeholder-color', string>
+>;
 
 export interface SearchBarProps {
   value?: string;
@@ -11,7 +17,11 @@ export interface SearchBarProps {
   icon?: React.ReactNode;
   maxLength?: number;
   clearable?: boolean;
-
+  disabled?: boolean;
+  style?: React.CSSProperties & TStyle;
+  cancelText?: string;
+  showCancel?: boolean;
+  onCancel?: () => void;
   onSearch?: (val: string) => void;
   onChange?: (val: string) => void;
   onClear?: () => void;
@@ -37,13 +47,15 @@ const SearchBar: React.FC<SearchBarProps> = React.memo((props) => {
   }, [props.onSearch]);
 
   return (
-    <div className={classPrefix}>
+    <div className={classPrefix} style={props.style}>
       <div className={`${classPrefix}-content`}>
         <div className={`${classPrefix}-content-icon`}>{props.icon}</div>
         <Input
           className={`${classPrefix}-content-input`}
+          style={{ '--placeholder-color': props.style?.['--placeholder-color'], '--color': props.style?.['--color'] }}
           placeholder={props.placeholder}
           value={value}
+          disabled={props.disabled}
           maxLength={props.maxLength}
           clearable={props.clearable}
           type="search"
@@ -58,6 +70,11 @@ const SearchBar: React.FC<SearchBarProps> = React.memo((props) => {
           }}
         />
       </div>
+      {props.showCancel && (
+        <div className={`${classPrefix}-content-cancel`} role="button" onClick={props.onCancel}>
+          取消
+        </div>
+      )}
     </div>
   );
 });
@@ -66,6 +83,7 @@ SearchBar.defaultProps = {
   value: '',
   icon: <SearchOutline />,
   clearable: true,
+  cancelText: '取消',
 };
 
 SearchBar.displayName = 'SearchBar';
