@@ -3,6 +3,9 @@ import { Meta } from '@storybook/react';
 
 import Tabs from '@/tabs';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const TabsStory: Meta = {
@@ -11,9 +14,8 @@ const TabsStory: Meta = {
 };
 
 export const Basic = () => (
-  <div className="tabs-demo">
-    <div>
-      <h3>基本用法</h3>
+  <DemoWrap>
+    <DemoBlock title="基本用法">
       <Tabs activeKey="1">
         <Tabs.Tab title="标签1" key="1">
           内容1
@@ -25,10 +27,9 @@ export const Basic = () => (
           内容3
         </Tabs.Tab>
       </Tabs>
-    </div>
+    </DemoBlock>
 
-    <div>
-      <h3>样式风格</h3>
+    <DemoBlock title="样式风格">
       <Tabs
         activeKey="1"
         showTabLine={false}
@@ -46,8 +47,8 @@ export const Basic = () => (
           内容3
         </Tabs.Tab>
       </Tabs>
-    </div>
-  </div>
+    </DemoBlock>
+  </DemoWrap>
 );
 
 Basic.storyName = '基础用法';

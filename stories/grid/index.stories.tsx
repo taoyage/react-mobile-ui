@@ -4,6 +4,9 @@ import { Meta } from '@storybook/react';
 
 import Grid from '@/grid';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const GridStory: Meta = {
@@ -13,9 +16,8 @@ const GridStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div className="grid-demo">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <Grid columns={3} gap={8}>
           <Grid.Item>
             <div className="grid-demo-item-block">A</div>
@@ -33,9 +35,8 @@ export const Basic = () => {
             <div className="grid-demo-item-block">E</div>
           </Grid.Item>
         </Grid>
-      </div>
-      <div>
-        <h3>格子跨度</h3>
+      </DemoBlock>
+      <DemoBlock title="格子跨度">
         <Grid columns={3} gap={8}>
           <Grid.Item>
             <div className="grid-demo-item-block">A</div>
@@ -53,8 +54,8 @@ export const Basic = () => {
             <div className="grid-demo-item-block">E</div>
           </Grid.Item>
         </Grid>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

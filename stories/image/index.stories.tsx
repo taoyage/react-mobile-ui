@@ -3,10 +3,12 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 
 import Image from '@/image';
+import Space from '@/space';
+
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
 import demoImg from './img.png';
-
-import './index.scss';
 
 const ImageStory: Meta = {
   title: '信息展示/Image 图片',
@@ -15,31 +17,32 @@ const ImageStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div className="img-wrap">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <Image src={demoImg} alt="demo" />
-      </div>
-      <div>
-        <h3>填充模式</h3>
-        <Image src={demoImg} width="100" height="100" alt="demo" fit="contain" />
-        <Image src={demoImg} width="100" height="100" alt="demo" fit="cover" />
-        <Image src={demoImg} width="100" height="100" alt="demo" fit="fill" />
-        <Image src={demoImg} width="100" height="100" alt="demo" fit="scale-down" />
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>圆角</h3>
-        <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 4 }} />
-        <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 8 }} />
-        <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 32 }} />
-      </div>
+      <DemoBlock title="填充模式">
+        <Space wrap>
+          <Image src={demoImg} width="100" height="100" alt="demo" fit="contain" />
+          <Image src={demoImg} width="100" height="100" alt="demo" fit="cover" />
+          <Image src={demoImg} width="100" height="100" alt="demo" fit="fill" />
+          <Image src={demoImg} width="100" height="100" alt="demo" fit="scale-down" />
+        </Space>
+      </DemoBlock>
 
-      <div>
-        <h3>懒加载</h3>
+      <DemoBlock title="圆角">
+        <Space wrap>
+          <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 4 }} />
+          <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 8 }} />
+          <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 32 }} />
+        </Space>
+      </DemoBlock>
+
+      <DemoBlock title="懒加载">
         <Image src={demoImg} width="64" height="64" alt="demo" style={{ borderRadius: 4 }} lazy={true} />
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

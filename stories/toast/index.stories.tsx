@@ -5,7 +5,10 @@ import Toast from '@/toast';
 import ToastComponent from '@/toast/toast';
 import Button from '@/button';
 
-import './index.scss';
+import Space from '@/space';
+
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
 const ToastStory: Meta = {
   title: '反馈/ Toast 轻提示',
@@ -13,9 +16,8 @@ const ToastStory: Meta = {
 };
 
 export const Basic = () => (
-  <div className="toast-demo">
-    <div>
-      <h3>基本用法</h3>
+  <DemoWrap>
+    <DemoBlock title="基本用法">
       <Button
         onClick={() =>
           Toast.show({
@@ -28,57 +30,57 @@ export const Basic = () => (
       >
         文字提示
       </Button>
-    </div>
+    </DemoBlock>
 
-    <div>
-      <h3>图标</h3>
+    <DemoBlock title="图标">
+      <Space>
+        <Button
+          color="success"
+          onClick={() =>
+            Toast.show({
+              icon: 'success',
+              content: 'success',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          成功
+        </Button>
 
-      <Button
-        color="success"
-        onClick={() =>
-          Toast.show({
-            icon: 'success',
-            content: 'success',
-            afterClose: () => {
-              console.log('after');
-            },
-          })
-        }
-      >
-        成功
-      </Button>
+        <Button
+          color="warning"
+          onClick={() =>
+            Toast.show({
+              icon: 'fail',
+              content: 'faild',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          失败
+        </Button>
 
-      <Button
-        color="warning"
-        onClick={() =>
-          Toast.show({
-            icon: 'fail',
-            content: 'faild',
-            afterClose: () => {
-              console.log('after');
-            },
-          })
-        }
-      >
-        失败
-      </Button>
-
-      <Button
-        color="primary"
-        onClick={() =>
-          Toast.show({
-            icon: 'loading',
-            content: 'loading',
-            afterClose: () => {
-              console.log('after');
-            },
-          })
-        }
-      >
-        加载中
-      </Button>
-    </div>
-  </div>
+        <Button
+          color="primary"
+          onClick={() =>
+            Toast.show({
+              icon: 'loading',
+              content: 'loading',
+              afterClose: () => {
+                console.log('after');
+              },
+            })
+          }
+        >
+          加载中
+        </Button>
+      </Space>
+    </DemoBlock>
+  </DemoWrap>
 );
 
 Basic.storyName = '基础用法';

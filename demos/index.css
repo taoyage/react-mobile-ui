@@ -11,9 +11,13 @@
 }
 
 .demo-block-header {
+  font-size: 14px;
   padding: 10px;
 }
 
 .demo-block-content {
+  padding: 10px;
   background-color: #fff;
+  overflow: hidden;
+  overflow-y: auto;
 }

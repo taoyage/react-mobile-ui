@@ -6,8 +6,6 @@ import Sidebar from '@/sidebar';
 import DemoWrap from '../../demos/demo-wrap';
 import DemoBlock from '../../demos/demo-block';
 
-import './index.scss';
-
 const SidebarStory: Meta = {
   title: '导航/Sidebar 侧边导航',
   component: Sidebar,
@@ -16,7 +14,7 @@ const SidebarStory: Meta = {
 export const Basic = () => {
   return (
     <DemoWrap>
-      <DemoBlock title="基础用法">
+      <DemoBlock title="基础用法" style={{ padding: 0 }}>
         <Sidebar activeKey="1">
           <Sidebar.Item key="1" title="item1">
             1
@@ -33,7 +31,7 @@ export const Basic = () => {
         </Sidebar>
       </DemoBlock>
 
-      <DemoBlock title="自定义列宽">
+      <DemoBlock title="自定义列宽" style={{ padding: 0 }}>
         <Sidebar activeKey="1" style={{ '--width': '120px' }}>
           <Sidebar.Item key="1" title="item1">
             1

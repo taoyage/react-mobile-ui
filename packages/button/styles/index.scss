@@ -2,9 +2,9 @@
 
 .ygm-button {
   --base-button-padding: 7px 12px;
-  --small-button-padding: 3px 0;
+  --small-button-padding: 3px 12px;
   --middle-button-padding: var(--base-button-padding);
-  --large-button-padding: 11px 0;
+  --large-button-padding: 11px 12px;
 
   color: var(--ygm-color-text);
   background-color: var(--ygm-color-background);

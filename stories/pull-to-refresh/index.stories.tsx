@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import PullToRefresh from '@/pull-to-refresh';
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
-import './index.scss';
+import PullToRefresh from '@/pull-to-refresh';
 
 const CountdownStory: Meta = {
   title: '反馈/PullToRefresh 下拉刷新',
@@ -20,16 +21,15 @@ export const Basic = () => {
   };
 
   return (
-    <div style={{ overflowY: 'auto' }}>
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <PullToRefresh onRefresh={onRefresh}>
           {list.map((_, index) => (
             <div key={index}>list-{index}</div>
           ))}
         </PullToRefresh>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 
