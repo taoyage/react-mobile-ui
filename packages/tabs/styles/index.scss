@@ -1,5 +1,3 @@
-@import '../../styles/variable.scss';
-
 $class-prefix-tabs: 'ygm-tabs';
 
 .#{$class-prefix-tabs} {
@@ -20,18 +18,18 @@ $class-prefix-tabs: 'ygm-tabs';
 
     &-card {
       .#{$class-prefix-tabs}-tab-active {
-        background: $ygm-color-primary;
+        background: var(--ygm-color-primary);
 
         .#{$class-prefix-tabs}-tab-title {
-          color: $ygm-color-white;
+          color: var(--ygm-color-white);
         }
       }
     }
 
     &-card {
-      background-color: $ygm-border-color;
+      background-color: var(--ygm-color-border);
       .#{$class-prefix-tabs}-tab-title {
-        color: #838a96;
+        color: var(--ygm-color-weak);
       }
     }
   }
@@ -43,7 +41,7 @@ $class-prefix-tabs: 'ygm-tabs';
 
     &-title {
       margin: auto;
-      font-size: $ygm-font-size-medium;
+      font-size: var(--ygm-font-size-m);
       white-space: nowrap;
       width: min-content;
       position: relative;
@@ -52,7 +50,7 @@ $class-prefix-tabs: 'ygm-tabs';
 
     &-active {
       .#{$class-prefix-tabs}-tab-title {
-        color: $ygm-color-primary;
+        color: var(--ygm-color-primary);
       }
     }
   }
@@ -61,11 +59,11 @@ $class-prefix-tabs: 'ygm-tabs';
     position: absolute;
     bottom: 0;
     height: 2px;
-    background: $ygm-color-primary;
+    background: var(--ygm-color-primary);
     border-radius: 2px;
   }
 
   &-content {
-    padding: 12px;
+    padding: var(--ygm-padding-m);
   }
 }

@@ -2,8 +2,10 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 
 import SpinnerLoading from '@/spinner-loading';
+import Space from '@/space';
 
-import './index.scss';
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
 const LoadingStory: Meta = {
   title: '反馈/Loading 加载中',
@@ -12,28 +14,25 @@ const LoadingStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div className="loading-wrap">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <SpinnerLoading />
-      </div>
-      <div>
-        <h3>颜色</h3>
-        <div className="row">
+      </DemoBlock>
+      <DemoBlock title="颜色">
+        <Space wrap>
           <SpinnerLoading />
           <SpinnerLoading color="primary" />
           <SpinnerLoading color="red" />
-        </div>
-      </div>
-      <div>
-        <h3>大小</h3>
-        <div className="row">
+        </Space>
+      </DemoBlock>
+      <DemoBlock title="大小">
+        <Space wrap>
           <SpinnerLoading size={24} />
           <SpinnerLoading size={32} />
           <SpinnerLoading size={48} />
-        </div>
-      </div>
-    </div>
+        </Space>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

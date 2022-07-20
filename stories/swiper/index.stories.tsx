@@ -3,6 +3,9 @@ import { Meta } from '@storybook/react';
 
 import Swiper from '@/swiper';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const SwiperStory: Meta = {
@@ -15,9 +18,8 @@ const colors = ['#ace0ff', '#bcffbd', '#e4fabd'];
 
 export const Basic = () => {
   return (
-    <div className="swiper-demo">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <Swiper autoplay={false}>
           {colors.map((color, index) => (
             <Swiper.Item key={index}>
@@ -27,8 +29,8 @@ export const Basic = () => {
             </Swiper.Item>
           ))}
         </Swiper>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

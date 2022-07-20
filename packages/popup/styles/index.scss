@@ -1,9 +1,7 @@
-@import '../../styles/variable.scss';
-
 .ygm-popup {
   z-index: 1001;
   position: fixed;
-  background-color: $ygm-color-white;
+  background-color: var(--ygm-color-background);
 
   &-position-left {
     height: 100%;

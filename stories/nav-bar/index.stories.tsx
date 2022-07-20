@@ -3,41 +3,40 @@ import { Meta } from '@storybook/react';
 import { SearchOutline } from 'antd-mobile-icons';
 
 import NavBar from '@/nav-bar';
+import Toast from '@/toast';
 
-import './index.scss';
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
-const LoadingStory: Meta = {
+const NavBarStory: Meta = {
   title: '导航/NavBar 导航栏',
   component: NavBar,
 };
 
 export const Basic = () => {
   const onBack = () => {
-    console.log('back');
+    Toast.show('back');
   };
 
   return (
-    <div className="nav-bar-wrap">
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <NavBar leftArrow={false}>标题</NavBar>
-      </div>
-      <div>
-        <h3>自定义返回按钮</h3>
+      </DemoBlock>
+      <DemoBlock title="自定义返回按钮">
         <NavBar onBack={onBack} leftText="返回" leftArrow={true}>
           标题
         </NavBar>
-      </div>
-      <div>
-        <h3>右侧按钮</h3>
+      </DemoBlock>
+      <DemoBlock title="右侧按钮">
         <NavBar onBack={onBack} right={<SearchOutline />}>
           标题
         </NavBar>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 
 Basic.storyName = '基本用法';
 
-export default LoadingStory;
+export default NavBarStory;

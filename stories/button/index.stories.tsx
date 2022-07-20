@@ -3,8 +3,10 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 
 import Button from '@/button';
+import Space from '@/space';
 
-import './index.scss';
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
 
 const ButtonStory: Meta = {
   title: '通用/Button 按钮',
@@ -13,49 +15,31 @@ const ButtonStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div>
-      <div>
-        <h3>按钮颜色</h3>
-        <div className="button-wrap">
-          <div>
-            <Button>default</Button>
-          </div>
-          <div>
-            <Button color="primary">primary</Button>
-          </div>
-          <div>
-            <Button color="success">success</Button>
-          </div>
-          <div>
-            <Button color="danger">danger</Button>
-          </div>
-          <div>
-            <Button color="warning">warning</Button>
-          </div>
-        </div>
-      </div>
+    <DemoWrap>
+      <DemoBlock title="按钮颜色">
+        <Space wrap>
+          <Button>default</Button>
+          <Button color="primary">primary</Button>
+          <Button color="success">success</Button>
+          <Button color="danger">danger</Button>
+          <Button color="warning">warning</Button>
+        </Space>
+      </DemoBlock>
 
-      <div>
-        <h3>按钮尺寸</h3>
-        <div className="button-wrap">
-          <div>
-            <Button color="primary" size="small">
-              small
-            </Button>
-          </div>
-          <div>
-            <Button color="primary" size="middle">
-              middle
-            </Button>
-          </div>
-          <div>
-            <Button color="primary" size="large">
-              large
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
+      <DemoBlock title="按钮尺寸">
+        <Space wrap>
+          <Button color="primary" size="small">
+            small
+          </Button>
+          <Button color="primary" size="middle">
+            middle
+          </Button>
+          <Button color="primary" size="large">
+            large
+          </Button>
+        </Space>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

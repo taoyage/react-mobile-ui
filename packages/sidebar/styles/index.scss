@@ -1,15 +1,13 @@
-@import '../../styles/variable.scss';
-
 $class-prefix-sidebar: 'ygm-sidebar';
 
 .#{$class-prefix-sidebar} {
   --height: 100%;
   --width: 80px;
-  --item-border-radius: 8px;
-  --background-color: #f7f8fa;
+  --item-border-radius: var(--ygm-radius-m);
+  --background-color: var(--ygm-color-box);
 
   height: var(--height);
-  font-size: $ygm-font-size-medium;
+  font-size: var(--ygm-font-size-m);
   display: flex;
 
   &-items {
@@ -23,7 +21,7 @@ $class-prefix-sidebar: 'ygm-sidebar';
     overflow: hidden;
     overflow-y: auto;
     padding: 16px 12px;
-    background-color: $ygm-color-white;
+    background-color: var(--ygm-color-white);
   }
 
   &-item {
@@ -36,7 +34,7 @@ $class-prefix-sidebar: 'ygm-sidebar';
     background-color: var(--background-color);
 
     &-active {
-      background-color: $ygm-color-white;
+      background-color: var(--ygm-color-white);
       position: relative;
     }
   }

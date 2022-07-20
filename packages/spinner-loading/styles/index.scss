@@ -1,5 +1,3 @@
-@import '../../styles/variable.scss';
-
 .ygm-spinner {
   &-loading {
     border-top: 1px solid;
@@ -12,18 +10,18 @@
   }
 
   &-loading-color-default {
-    border-top-color: $ygm-color-weak;
-    border-left-color: $ygm-color-weak;
+    border-top-color: var(--ygm-color-weak);
+    border-left-color: var(--ygm-color-weak);
   }
 
   &-loading-color-primary {
-    border-top-color: $ygm-color-primary;
-    border-left-color: $ygm-color-primary;
+    border-top-color: var(--ygm-color-primary);
+    border-left-color: var(--ygm-color-primary);
   }
 
   &-loading-color-white {
-    border-top-color: $ygm-color-white;
-    border-left-color: $ygm-color-white;
+    border-top-color: var(--ygm-color-white);
+    border-left-color: var(--ygm-color-white);
   }
 }
 

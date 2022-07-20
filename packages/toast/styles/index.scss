@@ -1,5 +1,3 @@
-@import '../../styles/variable.scss';
-
 .ygm-toast {
   position: fixed;
   top: 0;
@@ -19,12 +17,12 @@
     max-width: 70%;
     max-height: 70%;
     overflow: auto;
-    color: $ygm-color-white;
+    color: var(--ygm-color-white);
     word-break: break-all;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 8px;
+    border-radius: var(--ygm-radius-m);
     pointer-events: all;
-    font-size: $ygm-font-size-medium;
+    font-size: var(--ygm-font-size-m);
     line-height: 1.5;
     box-sizing: border-box;
 
@@ -33,7 +31,7 @@
     }
 
     &-text {
-      padding: 12px;
+      padding: var(--ygm-padding-m);
     }
   }
 

@@ -3,6 +3,9 @@ import { Meta } from '@storybook/react';
 
 import Countdown from '@/countdown';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const CountdownStory: Meta = {
@@ -12,27 +15,24 @@ const CountdownStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div>
-      <div>
-        <h3>基本用法</h3>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
         <Countdown time={3001} endText="活动结束" />
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>自定义格式</h3>
+      <DemoBlock title="自定义格式">
         <Countdown time={24 * 60 * 60 * 1000} format="dd天hh时mm分ss秒" />
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>自定义样式</h3>
+      <DemoBlock title="自定义样式">
         <Countdown
           time={60 * 60 * 1000}
           format="hh:mm:ss"
           numberClassName="demo-countdown-num"
           symbolClassName="demo-countdown-symbol"
         />
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

@@ -1,15 +1,41 @@
-$ygm-color-primary: #0bafff;
-$ygm-color-success: #00b578;
-$ygm-color-warning: #ff8f1f;
-$ygm-color-danger: #ff3141;
-$ygm-color-white: #ffffff;
-$ygm-color-weak: #999999;
-$ygm-color-light: #cccccc;
-$ygm-border-color: #eeeeee;
-$ygm-color-text: #333333;
+:root {
+  // Color
+  --ygm-color-primary: #0bafff;
+  --ygm-color-success: #00b578;
+  --ygm-color-warning: #ff8f1f;
+  --ygm-color-danger: #ff3141;
 
-$ygm-font-size-small: 12px;
-$ygm-font-size-medium: 14px;
-$ygm-font-size-medium-x: 16px;
-$ygm-font-size-large: 18px;
-$ygm-font-size-large-x: 22px;
+  --ygm-color-white: #ffffff;
+  --ygm-color-text: #333333;
+  --ygm-color-weak: #999999;
+  --ygm-color-light: #cccccc;
+  --ygm-color-border: #eeeeee;
+  --ygm-color-background: #ffffff;
+  --ygm-color-box: #f5f5f5;
+
+  // Padding
+  --ygm-padding-xs: 4px;
+  --ygm-padding-s: 8px;
+  --ygm-padding-m: 12px;
+  --ygm-padding-l: 16px;
+  --ygm-padding-xl: 20px;
+
+  // Border-radius
+  --ygm-radius-xs: 4px;
+  --ygm-radius-s: 6px;
+  --ygm-radius-m: 8px;
+  --ygm-radius-l: 10px;
+  --ygm-radius-xl: 12px;
+
+  // Font
+  --ygm-font-size-xs: 10px;
+  --ygm-font-size-s: 12px;
+  --ygm-font-size-m: 14px;
+  --ygm-font-size-l: 16px;
+  --ygm-font-size-xl: 18px;
+  --ygm-font-size-xxl: 20px;
+  --ygm-font-size-xxxl: 22px;
+
+  --ygm-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
+    'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}

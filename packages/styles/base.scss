@@ -1,8 +1,7 @@
 @import './variable.scss';
 
 body {
-  color: $ygm-color-text;
-  font-size: $ygm-font-size-medium;
-  font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue', helvetica, segoe ui, arial, roboto, 'PingFang SC',
-    'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  color: var(--ygm-color-text);
+  font-size: var(--ygm-font-size-m);
+  font-family: var(--ygm-font-family);
 }

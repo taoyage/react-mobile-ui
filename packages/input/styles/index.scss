@@ -1,13 +1,11 @@
 $class-prefix-input: 'ygm-input';
 
 .#{$class-prefix-input} {
-  --ygm-color-light: #cccccc;
-  --ygm-color-weak: #999999;
-  --color: #333333;
-  --placeholder-color: #cccccc;
+  --color: var(--ygm-color-text);
+  --placeholder-color: var(--ygm-color-light);
   --text-align: left;
   --background-color: transparent;
-  --font-size: 14px;
+  --font-size: var(--ygm-font-size-m);
 
   display: flex;
   justify-content: flex-start;
@@ -97,7 +95,7 @@ $class-prefix-input: 'ygm-input';
     cursor: pointer;
     .antd-mobile-icon {
       display: block;
-      font-size: 15px;
+      font-size: var(--ygm-font-size-l);
     }
   }
 }

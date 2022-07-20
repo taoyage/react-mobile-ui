@@ -6,6 +6,8 @@ import ErrorBlock from '@/error-block';
 import DemoWrap from '../../demos/demo-wrap';
 import DemoBlock from '../../demos/demo-block';
 
+import './index.scss';
+
 const ErrorStory: Meta = {
   title: '反馈/ErrorBlock 异常',
   component: ErrorBlock,

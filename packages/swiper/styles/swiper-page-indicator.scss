@@ -1,5 +1,3 @@
-@import '../../styles/variable.scss';
-
 .ygm-swiper-page-indicator {
   display: flex;
   width: auto;
@@ -8,7 +6,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: $ygm-color-weak;
+    background-color: var(--ygm-color-weak);
     margin-right: 5px;
 
     &:last-child {
@@ -19,7 +17,7 @@
       width: 13px;
       height: 5px;
       border-radius: 2px;
-      background-color: $ygm-color-primary;
+      background-color: var(--ygm-color-primary);
     }
   }
 }

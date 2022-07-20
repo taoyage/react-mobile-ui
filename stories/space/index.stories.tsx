@@ -4,6 +4,9 @@ import { Meta } from '@storybook/react';
 import Space from '@/space';
 import Button from '@/button';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 import './index.scss';
 
 const LoadingStory: Meta = {
@@ -13,33 +16,29 @@ const LoadingStory: Meta = {
 
 export const Basic = () => {
   return (
-    <div className="space-demo-wrap">
-      <div>
-        <h3>水平间距</h3>
+    <DemoWrap>
+      <DemoBlock title="水平间距">
         <Space>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-      </div>
-      <div>
-        <h3>垂直间距</h3>
+      </DemoBlock>
+      <DemoBlock title="垂直间距">
         <Space direction="vertical">
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-      </div>
-      <div>
-        <h3>间距大小</h3>
+      </DemoBlock>
+      <DemoBlock title="间距大小">
         <Space gap={20}>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-      </div>
-      <div>
-        <h3>换行</h3>
+      </DemoBlock>
+      <DemoBlock title="换行">
         <Space wrap>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
@@ -51,19 +50,17 @@ export const Basic = () => {
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>块级元素</h3>
+      <DemoBlock title="块级元素">
         <Space block>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>主轴对齐</h3>
+      <DemoBlock title="主轴对齐">
         <Space justify="center" block>
           <Button>1</Button>
           <Button>
@@ -73,10 +70,9 @@ export const Basic = () => {
             3<br />3<br />3
           </Button>
         </Space>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>交叉轴对齐</h3>
+      <DemoBlock title="交叉轴对齐">
         <Space align="end">
           <Button>1</Button>
           <Button>
@@ -86,8 +82,8 @@ export const Basic = () => {
             3<br />3<br />3
           </Button>
         </Space>
-      </div>
-    </div>
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 

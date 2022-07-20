@@ -2,10 +2,10 @@ $class-prefix-search-bar: 'ygm-search-bar';
 
 .#{$class-prefix-search-bar} {
   --height: 32px;
-  --padding-left: 8px;
-  --background: #fff;
-  --search-background: #f7f8fa;
-  --border-radius: 4px;
+  --padding-left: var(--ygm-padding-s);
+  --background: var(--ygm-color-background);
+  --search-background: var(--ygm-color-box);
+  --border-radius: var(--ygm-radius-xs);
 
   display: flex;
   align-items: center;
@@ -25,8 +25,8 @@ $class-prefix-search-bar: 'ygm-search-bar';
 
     &-icon {
       flex: none;
-      color: #4d4d4d;
-      font-size: 16px;
+      color: var(--ygm-color-weak);
+      font-size: var(--ygm-font-size-l);
       margin-right: 8px;
     }
 
@@ -35,9 +35,9 @@ $class-prefix-search-bar: 'ygm-search-bar';
     }
 
     &-cancel {
-      padding-left: 8px;
-      color: #323232;
-      font-size: 14px;
+      padding-left: var(--ygm-padding-s);
+      color: var(--ygm-color-text);
+      font-size: var(--ygm-font-size-m);
       line-height: 34px;
       cursor: pointer;
       user-select: none;

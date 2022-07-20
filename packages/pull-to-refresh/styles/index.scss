@@ -1,5 +1,3 @@
-@import '../../styles/variable.scss';
-
 .ygm-pull-to-refresh {
   overflow: hidden;
   user-select: none;
@@ -9,12 +7,12 @@
     transition-property: transform;
 
     &-content {
-      font-size: $ygm-font-size-small;
+      font-size: var(--ygm-font-size-s);
       overflow: hidden;
       position: absolute;
       left: 0;
       width: 100%;
-      color: $ygm-color-weak;
+      color: var(--ygm-color-weak);
       display: flex;
       justify-content: center;
       align-items: center;
