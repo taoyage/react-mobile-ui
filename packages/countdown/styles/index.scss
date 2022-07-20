@@ -1,13 +1,13 @@
-@import '../../styles/variable.scss';
+$class-prefix-countdown: 'ygm-countdown';
 
-.ygm-countdown {
+.#{$class-prefix-countdown} {
   display: flex;
   align-items: center;
-  font-size: $ygm-font-size-medium;
+  font-size: var(--ygm-font-size-m);
 
   &-item {
     display: flex;
     align-items: center;
-    font-size: $ygm-font-size-small;
+    font-size: var(--ygm-font-size-s);
   }
 }

@@ -1,13 +1,15 @@
-@import '../../styles/variable.scss';
+$class-prefix-nav-bar: 'ygm-nav-bar';
 
-.ygm-nav-bar {
-  height: 45px;
+.#{$class-prefix-nav-bar} {
+  --nav-bar-height: 45px;
+
+  height: --nav-bar-height;
   border-bottom: none;
-  padding: 0 16px;
+  padding: 0 var(--ygm-padding-l);
   white-space: nowrap;
   display: flex;
   align-items: center;
-  background-color: $ygm-color-white;
+  background-color: var(--ygm-color-background);
   box-sizing: border-box;
 
   &-left,
@@ -20,11 +22,11 @@
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: $ygm-font-size-medium;
+    font-size: var(--ygm-font-size-m);
   }
 
   &-left {
-    font-size: $ygm-font-size-medium;
+    font-size: var(--ygm-font-size-m);
     display: flex;
     justify-content: flex-start;
     align-items: center;

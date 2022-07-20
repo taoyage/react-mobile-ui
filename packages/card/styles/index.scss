@@ -1,8 +1,11 @@
-@import '../../styles/variable.scss';
+$class-prefix-card: 'ygm-card';
 
-.ygm-card {
-  background: $ygm-color-white;
-  border-radius: 13px;
+.#{$class-prefix-card} {
+  --card-header-padding: 13px;
+  --card-body-padding: 0 13px 13px 13px;
+
+  background: var(--ygm-color-white);
+  border-radius: var(--ygm-radius-xl);
   overflow: hidden;
   transform: rotate(0deg);
 
@@ -12,20 +15,20 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 13px;
+    padding: var(--card-header-padding);
 
     &-title {
-      font-size: $ygm-font-size-large;
+      font-size: var(--ygm-font-size-xl);
     }
 
     &-extra {
-      font-size: $ygm-font-size-medium;
+      font-size: var(--ygm-font-size-m);
     }
   }
 
   &-body {
     position: relative;
-    padding: 0 13px 13px 13px;
+    padding: var(--card-body-padding);
     box-sizing: border-box;
   }
 }

@@ -36,11 +36,6 @@ module.exports = {
         'css-loader',
         {
           loader: 'sass-loader',
-          options: {
-            additionalData: `
-              @import "@/styles/variable.scss";
-            `,
-          },
         },
       ],
       include: [resolve('stories'), resolve('packages'), resolve('demos')],

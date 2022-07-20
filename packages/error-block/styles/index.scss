@@ -1,8 +1,9 @@
-@import '../../styles/variable.scss';
-
 $class-prefix-error-block: 'ygm-error-block';
 
 .#{$class-prefix-error-block} {
+  --image-height: 200px;
+  --image-width: 100%;
+
   box-sizing: border-box;
   text-align: center;
   display: flex;
@@ -13,8 +14,8 @@ $class-prefix-error-block: 'ygm-error-block';
   transform: translateY(-10%);
 
   &-image {
-    height: 200px;
-    width: 100%;
+    height: var(--image-height);
+    width: var(--image-width);
 
     & svg {
       height: 100%;
@@ -22,12 +23,12 @@ $class-prefix-error-block: 'ygm-error-block';
   }
 
   &-description {
-    font-size: $ygm-font-size-small;
-    color: #999;
+    font-size: var(--ygm-font-size-s);
+    color: var(--ygm-color-weak);
     line-height: 1.4;
     margin-top: 10px;
     &-title {
-      font-size: $ygm-font-size-medium;
+      font-size: var(--ygm-font-size-m);
     }
     &-subtitle {
       margin-top: 8px;

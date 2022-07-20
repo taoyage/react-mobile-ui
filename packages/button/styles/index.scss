@@ -1,60 +1,63 @@
 @import '../../styles/variable.scss';
 
 .ygm-button {
-  color: $ygm-color-text;
-  background-color: $ygm-color-white;
-  font-size: $ygm-font-size-medium-x;
+  --base-button-padding: 7px 12px;
+  --small-button-padding: 3px 0;
+  --middle-button-padding: var(--base-button-padding);
+  --large-button-padding: 11px 0;
+
+  color: var(--ygm-color-text);
+  background-color: var(--ygm-color-background);
+  font-size: var(--ygm-font-size-l);
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  padding: 7px 12px;
+  padding: var(--base-button-padding);
   margin: 0;
   line-height: 1.4;
   text-align: center;
-  border-radius: 4px;
+  border-radius: var(--ygm-radius-xs);
   user-select: none;
-  border: 1px solid $ygm-border-color;
-  color: $ygm-color-white;
+  border: 1px solid var(--ygm-color-border);
+  color: var(--ygm-color-white);
 
   &-default {
-    background-color: $ygm-color-white;
-    border-color: $ygm-border-color;
-    color: $ygm-color-text;
+    background-color: var(--ygm-color-background);
+    border-color: var(--ygm-color-border);
+    color: var(--ygm-color-text);
   }
 
   &-primary {
-    border-color: $ygm-color-primary;
-    background-color: $ygm-color-primary;
+    border-color: var(--ygm-color-primary);
+    background-color: var(--ygm-color-primary);
   }
 
   &-success {
-    border-color: $ygm-color-success;
-    background-color: $ygm-color-success;
+    border-color: var(--ygm-color-success);
+    background-color: var(--ygm-color-success);
   }
 
   &-danger {
-    border-color: $ygm-color-danger;
-    background-color: $ygm-color-danger;
+    border-color: var(--ygm-color-danger);
+    background-color: var(--ygm-color-danger);
   }
 
   &-warning {
-    border-color: $ygm-color-warning;
-    background-color: $ygm-color-warning;
+    border-color: var(--ygm-color-warning);
+    background-color: var(--ygm-color-warning);
   }
 
   &-small {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    font-size: $ygm-font-size-medium;
+    padding: var(--small-button-padding);
+    font-size: var(--ygm-font-size-m);
   }
 
   &-middle {
-    padding: 7px 12px;
+    padding: var(--middle-button-padding);
   }
 
   &-large {
-    padding-top: 11px;
-    padding-bottom: 11px;
-    font-size: $ygm-font-size-large;
+    padding: var(--large-button-padding);
+    font-size: var(--ygm-font-size-xl);
   }
 }
