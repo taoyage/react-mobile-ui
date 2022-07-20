@@ -1,0 +1,37 @@
+## 1.1.6 (2022-07-20)
+
+### Bug Fixes
+
+-   修复样式兼容问题 ([c1b74af](https://github.com/taoyage/react-mobile-ui/commit/c1b74afd28d63237ed3d5a2ff88d06a7f79eea72))
+-   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
+-   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
+-   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
+-   fix global css variabale ([0c6b1ba](https://github.com/taoyage/react-mobile-ui/commit/0c6b1ba1f5b3ac0e442bc745a3528e4764a5890a))
+-   fix package repository ([7db91e5](https://github.com/taoyage/react-mobile-ui/commit/7db91e51f84f8d22124d8cee0af274e666fbb94b))
+-   fix space style ([5bae7c4](https://github.com/taoyage/react-mobile-ui/commit/5bae7c40b224ad095a9f5ec4f6242c61aaf9930f))
+-   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
+-   fix tabs props ([7cab6e9](https://github.com/taoyage/react-mobile-ui/commit/7cab6e940d35b98a1ec42c4af0482042ac43407b))
+-   fix unit format ([dd590ef](https://github.com/taoyage/react-mobile-ui/commit/dd590ef2fba004dcbfbcb1bba587010f24797ee7))
+-   sass 头部添加变量引用链接 ([9f6fa8b](https://github.com/taoyage/react-mobile-ui/commit/9f6fa8b5fa6021d26ea912cb5a6485683d8e03d5))
+
+### Features
+
+-   添加 loading 和 toast 组件 ([d94d58e](https://github.com/taoyage/react-mobile-ui/commit/d94d58ed98ef6be488e6248460e306fdc24678af))
+-   add button & card & nav-bar ([b1c53b4](https://github.com/taoyage/react-mobile-ui/commit/b1c53b4d071c98ae85bc6958081fc4d0eead9f58))
+-   add countdown ([67d3c74](https://github.com/taoyage/react-mobile-ui/commit/67d3c74e46d1bb28a7f63cadb80d72bd09e06917))
+-   add error-block ([e2e37d8](https://github.com/taoyage/react-mobile-ui/commit/e2e37d8d3fc04e4f85309cd5a30b461cdb59ea8f))
+-   add grid && update document ([81e0b54](https://github.com/taoyage/react-mobile-ui/commit/81e0b547969610478c58f804c7155374d80f0fd3))
+-   add image ([f25a118](https://github.com/taoyage/react-mobile-ui/commit/f25a118912450b22ce86cd9f2f9289447dc39521))
+-   add infinite-scroll ([97973c8](https://github.com/taoyage/react-mobile-ui/commit/97973c885cad95136c79aadda4b22ec215a9fa3d))
+-   add input ([25d1ff4](https://github.com/taoyage/react-mobile-ui/commit/25d1ff4486255afc877d0f8681ed5c75758ec9bd))
+-   add popup ([7eb804e](https://github.com/taoyage/react-mobile-ui/commit/7eb804e8d58645a272b91b6165736c46e9396d36))
+-   add side-bar ([05cc8f6](https://github.com/taoyage/react-mobile-ui/commit/05cc8f69754eb8a05c07e82eeec02a91ca771d17))
+-   add sidebar ([4fe21ed](https://github.com/taoyage/react-mobile-ui/commit/4fe21ed0fcf607fa8734b2c01d490db40e1847ad))
+-   add space && pull-to-refresh ([27114ed](https://github.com/taoyage/react-mobile-ui/commit/27114ed65e859688edff8ba0d68998b33d8beaaa))
+-   add swiper ([36410b1](https://github.com/taoyage/react-mobile-ui/commit/36410b1830d8c0885df970a7765278fb1844d254))
+-   add swiper ref ([b6fc9df](https://github.com/taoyage/react-mobile-ui/commit/b6fc9df4eed460f9541e5dea50e796f4908cde82))
+-   add tabs ([eb14c3b](https://github.com/taoyage/react-mobile-ui/commit/eb14c3b51ff9993bcc2bd8d6019fa1bce584b711))
+-   add useEffectOnce & useMount & useUnmount & useEffectOnce ([a500388](https://github.com/taoyage/react-mobile-ui/commit/a500388833c5247e9621de7d38a535caf38e75db))
+-   complete input component ([36b5c60](https://github.com/taoyage/react-mobile-ui/commit/36b5c60a6a411704196e5cccc412eebd0144680b))
+-   complete search-bar ([3dd3c59](https://github.com/taoyage/react-mobile-ui/commit/3dd3c59bb60611dbc7f4e224142f20525b44522c))
+-   init project ([0735478](https://github.com/taoyage/react-mobile-ui/commit/0735478c36e41fcaf8c26cb66c2cba4bba81b893))

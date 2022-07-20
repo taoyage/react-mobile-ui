@@ -1,6 +1,6 @@
 {
   "name": "@taoyage/react-mobile-ui",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A react mobile components lib",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
-    "build-storybook-docs": "build-storybook --docs",
+    "build-storybook-docs": "build-storybook --docs --no-manager-cache",
     "docs:deploy": "gh-pages -d storybook-static",
     "deploy": "npm run build-storybook-docs && npm run docs:deploy",
     "build": "node ./scripts/build.js",
