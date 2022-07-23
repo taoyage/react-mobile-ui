@@ -14,7 +14,7 @@ export interface PopupProps {
   /** 内容区域style属性 */
   style?: React.CSSProperties;
   /** 内容区域类名 */
-  bodyClassName?: string;
+  className?: string;
   /** 是否可见 */
   visible: boolean;
   children?: React.ReactNode;
@@ -40,10 +40,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
         }}
         unmountOnExit
       >
-        <div
-          style={props.style}
-          className={cx('ygm-popup', `ygm-popup-position-${props.position}`, props.bodyClassName)}
-        >
+        <div style={props.style} className={cx('ygm-popup', `ygm-popup-position-${props.position}`, props.className)}>
           {props.children}
         </div>
       </CSSTransition>

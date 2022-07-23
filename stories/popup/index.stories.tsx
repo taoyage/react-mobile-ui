@@ -24,10 +24,10 @@ export const Basic = () => {
       <Button onClick={() => setVisible3(true)}>左侧弹出</Button>
       <Button onClick={() => setVisible4(true)}>右侧弹出</Button>
 
-      <Popup position="bottom" visible={visible1} onMaskClick={() => setVisible1(false)} />
-      <Popup position="top" visible={visible2} onMaskClick={() => setVisible2(false)} />
-      <Popup position="left" visible={visible3} onMaskClick={() => setVisible3(false)} />
-      <Popup position="right" visible={visible4} onMaskClick={() => setVisible4(false)} />
+      <Popup position="bottom" visible={visible1} onMaskClick={() => setVisible1(false)} style={{ height: '30vh' }} />
+      <Popup position="top" visible={visible2} onMaskClick={() => setVisible2(false)} style={{ height: '30vh' }} />
+      <Popup position="left" visible={visible3} onMaskClick={() => setVisible3(false)} style={{ width: '30vh' }} />
+      <Popup position="right" visible={visible4} onMaskClick={() => setVisible4(false)} style={{ width: '30vh' }} />
     </div>
   );
 };
