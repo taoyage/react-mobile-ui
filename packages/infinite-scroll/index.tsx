@@ -1,6 +1,8 @@
 import React from 'react';
 import Loading from '@/spinner-loading';
 
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+
 import { isWindow } from '@/infinite-scroll/utils';
 
 import { getScrollParent } from '@/utils/scroll';
@@ -21,43 +23,52 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = React.memo((props) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const parentRef = React.useRef<ParentType>(null);
   const nextFlagRef = React.useRef<boolean>(true);
+  const intersectionRef = React.useRef<HTMLDivElement>(null);
 
-  const onScroll = React.useCallback(() => {
-    const element = containerRef.current;
-    const parent = parentRef.current;
+  const observerEntry = useIntersectionObserver(intersectionRef, {});
 
-    if (!element || !parent) return;
+  console.log(observerEntry?.isIntersecting);
 
-    const scrollTop = isWindow(parent) ? window.scrollY : parent.scrollTop;
-    const clientHeight = isWindow(parent) ? window.innerHeight : parent.clientHeight;
+  // const onScroll = React.useCallback(() => {
+  //   const element = containerRef.current;
+  //   const parent = parentRef.current;
 
-    const elementHeight = element.getBoundingClientRect().height;
-    // const elementTop = element.getBoundingClientRect().top;
+  //   if (!element || !parent) return;
 
-    if (scrollTop + clientHeight >= elementHeight) {
-      console.log('loadMore');
-    }
-  }, []);
+  //   const scrollTop = isWindow(parent) ? window.scrollY : parent.scrollTop;
+  //   const clientHeight = isWindow(parent) ? window.innerHeight : parent.clientHeight;
 
-  React.useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return;
+  //   const elementHeight = element.getBoundingClientRect().height;
+  //   // const elementTop = element.getBoundingClientRect().top;
 
-    parentRef.current = getScrollParent(element);
-    const parent = parentRef.current;
-    if (!parent) return;
+  //   if (scrollTop + clientHeight >= elementHeight) {
+  //     console.log('loadMore');
+  //   }
+  // }, []);
 
-    parent.addEventListener('scroll', onScroll);
+  // React.useEffect(() => {
+  //   const element = containerRef.current;
+  //   if (!element) return;
 
-    return () => {
-      parent.removeEventListener('scroll', onScroll);
-    };
-  }, [onScroll]);
+  //   parentRef.current = getScrollParent(element);
+  //   const parent = parentRef.current;
+  //   if (!parent) return;
+
+  //   parent.addEventListener('scroll', onScroll);
+
+  //   return () => {
+  //     parent.removeEventListener('scroll', onScroll);
+  //   };
+  // }, [onScroll]);
+
+  // console.log(isIntersection);
 
   return (
     <div ref={containerRef} className={classPrefix} style={{ position: 'relative' }}>
       {props.children}
-      <div className={`${classPrefix}-load`}>{props.hasMore && <Loading size={16} />}</div>
+      <div className={`${classPrefix}-load`} ref={intersectionRef}>
+        {props.hasMore && <Loading size={16} />}
+      </div>
     </div>
   );
 });

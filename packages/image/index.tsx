@@ -1,9 +1,6 @@
 import React from 'react';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
-// @ts-ignore
-import placeholder from '@/image/placeholder.png';
-
 export interface ImageProps {
   src: string;
   alt?: string;
@@ -21,13 +18,13 @@ export interface ImageProps {
 
 const Image: React.FC<ImageProps> = React.memo((props) => {
   const imageRef = React.useRef<HTMLImageElement | null>(null);
-  const isIntersecting = useIntersectionObserver(imageRef);
+  const observerEntry = useIntersectionObserver(imageRef, { freezeOnceVisible: true });
 
   return (
     <img
       className={props.className}
       ref={imageRef}
-      src={isIntersecting || !props.lazy ? props.src : props.loading}
+      src={observerEntry?.isIntersecting || !props.lazy ? props.src : props.loading}
       alt={props.alt}
       style={{ ...props.style, objectFit: props.fit }}
       width={props.width}
@@ -45,7 +42,8 @@ Image.defaultProps = {
   height: '100%',
   lazy: false,
   fit: 'cover',
-  loading: placeholder,
+  loading:
+    'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/x8AAqMB0Fk+W34AAAAASUVORK5CYII=',
 };
 
 Image.displayName = 'Image';
