@@ -20,7 +20,6 @@ const useIntersectionObserver = (
     const observerParams = { threshold, root, rootMargin };
 
     const ob = new IntersectionObserver(([entry]: IntersectionObserverEntry[]) => {
-      console.log(entry);
       setEntry(entry);
     }, observerParams);
 
