@@ -54,6 +54,12 @@ export { default as Sidebar } from '@/sidebar';
 export type { SearchBarProps } from '@/search-bar';
 export { default as SearchBar } from '@/search-bar';
 
+export type { ActionSheetProps, Action } from '@/action-sheet';
+export { default as ActionSheet } from '@/action-sheet';
+
+export type { InfiniteScrollProps } from '@/infinite-scroll';
+export { default as InfiniteScroll } from '@/infinite-scroll';
+
 // hooks
 export { default as useMount } from '@/hooks/useMount';
 export { default as useEffectOnce } from '@/hooks/useEffectOnce';
@@ -62,3 +68,6 @@ export { default as useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayou
 export { default as useScrollLock } from '@/hooks/useScrollLock';
 export { default as useUpdateEffect } from '@/hooks/useUpdateEffect';
 export { default as useUpdateIsomorphicLayoutEffect } from '@/hooks/useUpdateIsomorphicLayoutEffect';
+export { default as useLockFn } from '@/hooks/useLockFn';
+export { default as useLatest } from '@/hooks/useLatest';
+export { default as useUnmount } from '@/hooks/useUnmount';

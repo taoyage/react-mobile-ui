@@ -1,4 +1,4 @@
-## 1.1.9 (2022-07-23)
+## 1.1.10 (2022-07-23)
 
 ### Bug Fixes
 
@@ -14,12 +14,14 @@
 -   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
 -   fix tabs props ([7cab6e9](https://github.com/taoyage/react-mobile-ui/commit/7cab6e940d35b98a1ec42c4af0482042ac43407b))
 -   fix unit format ([dd590ef](https://github.com/taoyage/react-mobile-ui/commit/dd590ef2fba004dcbfbcb1bba587010f24797ee7))
+-   optimize image component ([01acd68](https://github.com/taoyage/react-mobile-ui/commit/01acd68a87c5f3999fa0a62e6e0931f495bfbd7b))
 -   sass 头部添加变量引用链接 ([9f6fa8b](https://github.com/taoyage/react-mobile-ui/commit/9f6fa8b5fa6021d26ea912cb5a6485683d8e03d5))
 
 ### Features
 
 -   添加 loading 和 toast 组件 ([d94d58e](https://github.com/taoyage/react-mobile-ui/commit/d94d58ed98ef6be488e6248460e306fdc24678af))
 -   完善 action-sheet 组件 ([3568355](https://github.com/taoyage/react-mobile-ui/commit/3568355d9002a6ddea5531b51f3bb4cfef314d2a))
+-   完善 infinite 组件 ([2081407](https://github.com/taoyage/react-mobile-ui/commit/20814073023f633d396dd2e6bf9982845d52aa6d))
 -   add button & card & nav-bar ([b1c53b4](https://github.com/taoyage/react-mobile-ui/commit/b1c53b4d071c98ae85bc6958081fc4d0eead9f58))
 -   add countdown ([67d3c74](https://github.com/taoyage/react-mobile-ui/commit/67d3c74e46d1bb28a7f63cadb80d72bd09e06917))
 -   add error-block ([e2e37d8](https://github.com/taoyage/react-mobile-ui/commit/e2e37d8d3fc04e4f85309cd5a30b461cdb59ea8f))
