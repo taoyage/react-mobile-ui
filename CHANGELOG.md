@@ -1,7 +1,8 @@
-## 1.1.8 (2022-07-20)
+## 1.1.9 (2022-07-23)
 
 ### Bug Fixes
 
+-   修复全局样式引用错误 ([c5eae24](https://github.com/taoyage/react-mobile-ui/commit/c5eae24b76ed52ed598d90ba454855e1f22fe0e0))
 -   修复样式兼容问题 ([c1b74af](https://github.com/taoyage/react-mobile-ui/commit/c1b74afd28d63237ed3d5a2ff88d06a7f79eea72))
 -   修复样式引用错误 ([3a7a125](https://github.com/taoyage/react-mobile-ui/commit/3a7a125dbee7fc8211a0547a50689aec659d2995))
 -   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
@@ -18,6 +19,7 @@
 ### Features
 
 -   添加 loading 和 toast 组件 ([d94d58e](https://github.com/taoyage/react-mobile-ui/commit/d94d58ed98ef6be488e6248460e306fdc24678af))
+-   完善 action-sheet 组件 ([3568355](https://github.com/taoyage/react-mobile-ui/commit/3568355d9002a6ddea5531b51f3bb4cfef314d2a))
 -   add button & card & nav-bar ([b1c53b4](https://github.com/taoyage/react-mobile-ui/commit/b1c53b4d071c98ae85bc6958081fc4d0eead9f58))
 -   add countdown ([67d3c74](https://github.com/taoyage/react-mobile-ui/commit/67d3c74e46d1bb28a7f63cadb80d72bd09e06917))
 -   add error-block ([e2e37d8](https://github.com/taoyage/react-mobile-ui/commit/e2e37d8d3fc04e4f85309cd5a30b461cdb59ea8f))
@@ -35,4 +37,5 @@
 -   add useEffectOnce & useMount & useUnmount & useEffectOnce ([a500388](https://github.com/taoyage/react-mobile-ui/commit/a500388833c5247e9621de7d38a535caf38e75db))
 -   complete input component ([36b5c60](https://github.com/taoyage/react-mobile-ui/commit/36b5c60a6a411704196e5cccc412eebd0144680b))
 -   complete search-bar ([3dd3c59](https://github.com/taoyage/react-mobile-ui/commit/3dd3c59bb60611dbc7f4e224142f20525b44522c))
+-   init action-sheet component ([989df2e](https://github.com/taoyage/react-mobile-ui/commit/989df2ea9eeb9a15b66a5ec995d622798b01dbe2))
 -   init project ([0735478](https://github.com/taoyage/react-mobile-ui/commit/0735478c36e41fcaf8c26cb66c2cba4bba81b893))
