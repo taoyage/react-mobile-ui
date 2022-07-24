@@ -1,10 +1,11 @@
-## 1.1.10 (2022-07-23)
+## 1.1.11 (2022-07-24)
 
 ### Bug Fixes
 
 -   修复全局样式引用错误 ([c5eae24](https://github.com/taoyage/react-mobile-ui/commit/c5eae24b76ed52ed598d90ba454855e1f22fe0e0))
 -   修复样式兼容问题 ([c1b74af](https://github.com/taoyage/react-mobile-ui/commit/c1b74afd28d63237ed3d5a2ff88d06a7f79eea72))
 -   修复样式引用错误 ([3a7a125](https://github.com/taoyage/react-mobile-ui/commit/3a7a125dbee7fc8211a0547a50689aec659d2995))
+-   修复 swiper 动画闪动问题 && 补充 swiper 文档 ([faa1d69](https://github.com/taoyage/react-mobile-ui/commit/faa1d69eba7718f32cfcf9f45a2d762d172ee1f5))
 -   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
 -   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
 -   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
