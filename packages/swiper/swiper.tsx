@@ -1,11 +1,14 @@
 import React from 'react';
 import SwiperPageIndicator from '@/swiper/swiper-page-indicator';
 
+import { getTouchEventData } from '@/utils/event';
+
 import { modulus } from './utils';
 
 import './styles/swiper.scss';
 
 export interface SwiperProps {
+  loop?: boolean;
   autoplay?: boolean;
   defaultIndex?: number;
   autoplayInterval?: number;
@@ -13,6 +16,7 @@ export interface SwiperProps {
   showIndicator?: boolean;
   indicatorClassName?: string;
   onIndexChange?: (index: number) => void;
+  style?: React.CSSProperties & Partial<Record<'--height' | '--width' | '--border-radius' | '--track-padding', string>>;
 }
 
 export interface SwiperRef {
@@ -38,11 +42,14 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
       if (dragging) {
         return '';
       } else if (autoPlaying.current) {
+        // 只有position100 和 position0 这两张slide会做动画
         if (position === -100 || position === 0) {
           return 'transform 0.3s ease-out';
         } else {
           return '';
         }
+      } else if (position < -100) {
+        return '';
       }
       return 'transform 0.3s ease-out';
     },
@@ -52,13 +59,16 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   const getFinalPosition = React.useCallback(
     (index: number) => {
       let finalPosition = -currentIndex * 100 + index * 100;
+
+      if (!props.loop) return finalPosition;
+
       const totalWidth = count * 100;
       const flagWidth = totalWidth / 2;
 
       finalPosition = modulus(finalPosition + flagWidth, totalWidth) - flagWidth;
       return finalPosition;
     },
-    [count, currentIndex]
+    [count, currentIndex, props.loop]
   );
 
   const renderSwiperItem = React.useCallback(() => {
@@ -66,6 +76,7 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
       <div className="ygm-swiper-track-inner">
         {React.Children.map(props.children, (child, index) => {
           const position = getFinalPosition(index);
+
           return (
             <div
               className="ygm-swiper-slide"
@@ -83,13 +94,29 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
     );
   }, [props.children, getFinalPosition, getTransition]);
 
+  const boundIndex = React.useCallback(
+    (currentIndex: number) => {
+      let min = 0;
+      let max = count - 1;
+
+      let ret = currentIndex;
+
+      ret = Math.max(currentIndex, min);
+
+      ret = Math.min(ret, max);
+
+      return ret;
+    },
+    [count]
+  );
+
   const swipeTo = React.useCallback(
     (index: number) => {
-      const targetIndex = modulus(index, count);
+      const targetIndex = props.loop ? modulus(index, count) : boundIndex(index);
       setCurrentIndex(targetIndex);
       props.onIndexChange?.(targetIndex);
     },
-    [count, props]
+    [boundIndex, count, props]
   );
 
   const swipePrev = React.useCallback(() => {
@@ -107,38 +134,51 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   }, []);
 
   const onTouchMove = React.useCallback(
-    (e: TouchEvent) => {
-      const currentX = e.changedTouches[0].clientX;
+    (e: TouchEvent | MouseEvent) => {
+      const currentX = getTouchEventData(e).clientX;
       const diff = startRef.current - currentX;
       slideRatioRef.current = getSlideRatio(diff);
+      let position = currentIndex + slideRatioRef.current;
 
-      setCurrentIndex(currentIndex + slideRatioRef.current);
+      if (!props.loop) {
+        position = boundIndex(position);
+      }
+
+      setCurrentIndex(position);
     },
-    [currentIndex, getSlideRatio]
+    [boundIndex, currentIndex, getSlideRatio, props.loop]
   );
 
   const onTouchEnd = React.useCallback(() => {
-    const element = trackRef.current;
-    if (!element) return;
     const index = Math.round(slideRatioRef.current);
     slideRatioRef.current = 0;
-    swipeTo(currentIndex + index);
+
+    let position = currentIndex + index;
+
+    // 边界判断
+    if (!props.loop) {
+      position = boundIndex(currentIndex + index);
+    }
+
+    swipeTo(position);
+
     setDragging(false);
-    element.removeEventListener('touchmove', onTouchMove);
-    element.removeEventListener('touchend', onTouchEnd);
-  }, [currentIndex, onTouchMove, swipeTo]);
+    document.removeEventListener('mousemove', onTouchMove);
+    document.removeEventListener('mouseup', onTouchEnd);
+    document.removeEventListener('touchmove', onTouchMove);
+    document.removeEventListener('touchend', onTouchEnd);
+  }, [boundIndex, currentIndex, onTouchMove, props.loop, swipeTo]);
 
   const onTouchStart = React.useCallback(
-    (e: React.TouchEvent<HTMLDivElement>) => {
-      const element = trackRef.current;
-      if (!element) return;
-
-      startRef.current = e.changedTouches[0].clientX;
+    (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+      startRef.current = getTouchEventData(e).clientX;
       setDragging(true);
       clearInterval(intervalRef.current);
       autoPlaying.current = false;
-      element.addEventListener('touchmove', onTouchMove);
-      element.addEventListener('touchend', onTouchEnd);
+      document.addEventListener('mousemove', onTouchMove);
+      document.addEventListener('mouseup', onTouchEnd);
+      document.addEventListener('touchmove', onTouchMove);
+      document.addEventListener('touchend', onTouchEnd);
     },
     [onTouchEnd, onTouchMove]
   );
@@ -161,8 +201,8 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   }, [dragging, props.autoplay, props.autoplayInterval, swipeNext]);
 
   return (
-    <div className="ygm-swiper">
-      <div className="ygm-swiper-track" ref={trackRef} onTouchStart={onTouchStart}>
+    <div className="ygm-swiper" style={props.style}>
+      <div className="ygm-swiper-track" ref={trackRef} onTouchStart={onTouchStart} onMouseDown={onTouchStart}>
         {renderSwiperItem()}
       </div>
       {props.showIndicator && (
@@ -183,6 +223,7 @@ Swiper.defaultProps = {
   defaultIndex: 0,
   autoplayInterval: 3000,
   showIndicator: true,
+  loop: false,
 };
 
 Swiper.displayName = 'Swiper';
