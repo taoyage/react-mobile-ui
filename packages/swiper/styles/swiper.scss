@@ -10,6 +10,7 @@
   touch-action: pan-y;
   border-radius: var(--border-radius);
   overflow: hidden;
+  z-index: 0;
 
   &-track {
     width: 100%;
