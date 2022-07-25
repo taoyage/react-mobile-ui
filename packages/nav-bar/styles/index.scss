@@ -2,9 +2,10 @@ $class-prefix-nav-bar: 'ygm-nav-bar';
 
 .#{$class-prefix-nav-bar} {
   --nav-bar-height: 45px;
+  --border-bottom: none;
 
-  height: --nav-bar-height;
-  border-bottom: none;
+  height: var(--nav-bar-height);
+  border-bottom: var(--border-bottom);
   padding: 0 var(--ygm-padding-l);
   white-space: nowrap;
   display: flex;

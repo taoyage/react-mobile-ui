@@ -84,6 +84,7 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
                 transform: `translate3d(${position}%, 0px, 0px)`,
                 left: `-${index * 100}%`,
                 transition: getTransition(position),
+                WebkitTransition: getTransition(position),
               }}
             >
               {child}

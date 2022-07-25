@@ -11,6 +11,7 @@ export interface NavBarProps {
   leftArrow?: boolean;
   leftText?: string;
   border?: boolean;
+  style?: React.CSSProperties & Partial<Record<'--nav-bar-height' | '--border-bottom', string>>;
 }
 
 const NavBar: React.FC<NavBarProps> = React.memo((props) => {

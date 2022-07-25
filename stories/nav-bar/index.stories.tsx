@@ -20,15 +20,15 @@ export const Basic = () => {
 
   return (
     <DemoWrap>
-      <DemoBlock title="基本用法">
+      <DemoBlock title="基本用法" style={{ padding: 0 }}>
         <NavBar leftArrow={false}>标题</NavBar>
       </DemoBlock>
-      <DemoBlock title="自定义返回按钮">
+      <DemoBlock title="自定义返回按钮" style={{ padding: 0 }}>
         <NavBar onBack={onBack} leftText="返回" leftArrow={true}>
           标题
         </NavBar>
       </DemoBlock>
-      <DemoBlock title="右侧按钮">
+      <DemoBlock title="右侧按钮" style={{ padding: 0 }}>
         <NavBar onBack={onBack} right={<SearchOutline />}>
           标题
         </NavBar>
