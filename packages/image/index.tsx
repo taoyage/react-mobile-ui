@@ -32,6 +32,7 @@ const Image: React.FC<ImageProps> = React.memo((props) => {
       onClick={props.onClick}
       onError={props.onError}
       onLoad={props.onLoad}
+      draggable={false}
     />
   );
 });
