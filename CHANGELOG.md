@@ -1,4 +1,4 @@
-# 1.2.0 (2022-07-25)
+# 1.3.0 (2022-07-29)
 
 ### Bug Fixes
 
@@ -7,6 +7,7 @@
 -   修复样式引用错误 ([3a7a125](https://github.com/taoyage/react-mobile-ui/commit/3a7a125dbee7fc8211a0547a50689aec659d2995))
 -   修复 navbar 高度问题 && swiper 动画过度失效问题 ([b49761f](https://github.com/taoyage/react-mobile-ui/commit/b49761f92ac95537248aa863cebecaa1284c4cdf))
 -   修复 swiper 动画闪动问题 && 补充 swiper 文档 ([faa1d69](https://github.com/taoyage/react-mobile-ui/commit/faa1d69eba7718f32cfcf9f45a2d762d172ee1f5))
+-   change image drag to false ([fd74c1e](https://github.com/taoyage/react-mobile-ui/commit/fd74c1ef7a363549816f4b5b5d110c5cbf6d0663))
 -   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
 -   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
 -   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
@@ -32,6 +33,7 @@
 -   add infinite-scroll ([97973c8](https://github.com/taoyage/react-mobile-ui/commit/97973c885cad95136c79aadda4b22ec215a9fa3d))
 -   add input ([25d1ff4](https://github.com/taoyage/react-mobile-ui/commit/25d1ff4486255afc877d0f8681ed5c75758ec9bd))
 -   add popup ([7eb804e](https://github.com/taoyage/react-mobile-ui/commit/7eb804e8d58645a272b91b6165736c46e9396d36))
+-   add selector ([24f978c](https://github.com/taoyage/react-mobile-ui/commit/24f978c0ff4b4ec4822455196a21469196578fef))
 -   add side-bar ([05cc8f6](https://github.com/taoyage/react-mobile-ui/commit/05cc8f69754eb8a05c07e82eeec02a91ca771d17))
 -   add sidebar ([4fe21ed](https://github.com/taoyage/react-mobile-ui/commit/4fe21ed0fcf607fa8734b2c01d490db40e1847ad))
 -   add space && pull-to-refresh ([27114ed](https://github.com/taoyage/react-mobile-ui/commit/27114ed65e859688edff8ba0d68998b33d8beaaa))
