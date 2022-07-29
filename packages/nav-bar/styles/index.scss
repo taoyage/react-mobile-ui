@@ -23,7 +23,7 @@ $class-prefix-nav-bar: 'ygm-nav-bar';
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: var(--ygm-font-size-m);
+    font-size: var(--ygm-font-size-l);
   }
 
   &-left {
@@ -33,6 +33,7 @@ $class-prefix-nav-bar: 'ygm-nav-bar';
     align-items: center;
 
     &-icon {
+      font-size: var(--ygm-font-size-xl);
       margin-right: 4px;
     }
   }
