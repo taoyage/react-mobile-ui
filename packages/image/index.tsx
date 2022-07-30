@@ -42,7 +42,7 @@ Image.defaultProps = {
   width: '100%',
   height: '100%',
   lazy: false,
-  fit: 'cover',
+  fit: 'fill',
   loading:
     'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/x8AAqMB0Fk+W34AAAAASUVORK5CYII=',
 };

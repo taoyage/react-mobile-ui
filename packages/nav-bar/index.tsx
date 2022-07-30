@@ -16,7 +16,7 @@ export interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = React.memo((props) => {
   return (
-    <div className="ygm-nav-bar">
+    <div className="ygm-nav-bar" style={props.style}>
       <div className="ygm-nav-bar-left" onClick={props.onBack}>
         {props.leftArrow && (
           <div className="ygm-nav-bar-left-icon">
