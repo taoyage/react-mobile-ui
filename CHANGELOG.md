@@ -1,4 +1,4 @@
-## 1.3.1 (2022-07-30)
+## 1.3.2 (2022-07-30)
 
 ### Bug Fixes
 
@@ -12,6 +12,7 @@
 -   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
 -   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
 -   fix global css variabale ([0c6b1ba](https://github.com/taoyage/react-mobile-ui/commit/0c6b1ba1f5b3ac0e442bc745a3528e4764a5890a))
+-   fix image && nav-bar ([8597421](https://github.com/taoyage/react-mobile-ui/commit/85974214ebc3b2c65479c795b5f9f30f46e3a6cf))
 -   fix package repository ([7db91e5](https://github.com/taoyage/react-mobile-ui/commit/7db91e51f84f8d22124d8cee0af274e666fbb94b))
 -   fix space style ([5bae7c4](https://github.com/taoyage/react-mobile-ui/commit/5bae7c40b224ad095a9f5ec4f6242c61aaf9930f))
 -   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
