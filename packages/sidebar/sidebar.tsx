@@ -9,7 +9,10 @@ export interface SidebarProps {
   activeKey: string;
   onChange?: (key: string) => void;
   children?: React.ReactNode;
-  style?: React.CSSProperties & Partial<Record<'--width' | '--height' | '--background-color', string>>;
+  style?: React.CSSProperties &
+    Partial<
+      Record<'--width' | '--height' | '--background-color' | '--content-padding' | '--sidebar-item-padding', string>
+    >;
 }
 
 const classPrefix = `ygm-sidebar`;

@@ -74,10 +74,6 @@ export const Basic = () => {
           </div>
         </DemoBlock>
       </Space>
-
-      {/* <DemoBlock title="自定义descript" style={{ padding: '10px' }}>
-        <ErrorBlock title="网络开小差" description="请尝试刷新页面" />
-      </DemoBlock> */}
     </DemoWrap>
   );
 };

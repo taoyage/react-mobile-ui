@@ -9,7 +9,7 @@ import './styles/index.scss';
 
 export interface TabsProps {
   activeKey: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   showTabLine?: boolean;
   type?: 'line' | 'card';
   tabActiveClassName?: string;
@@ -111,15 +111,18 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
         ))}
       </div>
 
-      {panes.map((child) => (
-        <div
-          key={child.key}
-          className={cx(`${classPrefix}-content`, props.tabContentClassName)}
-          style={{ display: activeKey === child.key ? 'block' : 'none' }}
-        >
-          {child}
-        </div>
-      ))}
+      {panes.map(
+        (child) =>
+          child.props.children && (
+            <div
+              key={child.key}
+              className={cx(`${classPrefix}-content`, props.tabContentClassName)}
+              style={{ display: activeKey === child.key ? 'block' : 'none' }}
+            >
+              {child}
+            </div>
+          )
+      )}
     </div>
   );
 });
