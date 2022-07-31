@@ -3,13 +3,13 @@ import React from 'react';
 export interface TabProps {
   key: string;
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
-const Tab: React.FC<TabProps> = React.memo((props) => {
-  return props.children as React.ReactElement;
-});
+const Tab: React.FC<TabProps> = (props) => {
+  return props.children ? (props.children as React.ReactElement) : null;
+};
 
 Tab.displayName = 'Tab';
 
