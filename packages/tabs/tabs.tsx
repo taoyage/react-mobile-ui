@@ -12,6 +12,7 @@ export interface TabsProps {
   children?: React.ReactNode;
   showTabLine?: boolean;
   type?: 'line' | 'card';
+  onChange?: (key: string) => void;
   tabActiveClassName?: string;
   tabListClassName?: string;
   tabContentClassName?: string;
@@ -38,10 +39,14 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
     keyToIndexRecord[child.key] = length - 1;
   });
 
-  const onTab = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const key = (e.target as HTMLElement).dataset['key'];
-    setActiveKey(key as string);
-  }, []);
+  const onTab = React.useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      const key = (e.target as HTMLElement).dataset['key'] as string;
+      setActiveKey(key);
+      props?.onChange?.(key);
+    },
+    [props?.onChange]
+  );
 
   const calculateLineWidth = React.useCallback(
     (immediate = false) => {
