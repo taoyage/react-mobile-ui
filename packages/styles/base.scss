@@ -5,3 +5,16 @@ body {
   font-size: var(--ygm-font-size-m);
   font-family: var(--ygm-font-family);
 }
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--ygm-color-primary);
+  transition: opacity ease-in-out 0.2s;
+}
+a:active {
+  opacity: 0.8;
+}
