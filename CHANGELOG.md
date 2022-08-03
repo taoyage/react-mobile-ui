@@ -1,4 +1,4 @@
-## 1.3.4 (2022-07-31)
+# 1.4.0 (2022-08-03)
 
 ### Bug Fixes
 
@@ -28,6 +28,7 @@
 -   完善 infinite 组件 ([2081407](https://github.com/taoyage/react-mobile-ui/commit/20814073023f633d396dd2e6bf9982845d52aa6d))
 -   add button & card & nav-bar ([b1c53b4](https://github.com/taoyage/react-mobile-ui/commit/b1c53b4d071c98ae85bc6958081fc4d0eead9f58))
 -   add countdown ([67d3c74](https://github.com/taoyage/react-mobile-ui/commit/67d3c74e46d1bb28a7f63cadb80d72bd09e06917))
+-   add ellipsis ([073b991](https://github.com/taoyage/react-mobile-ui/commit/073b991b2d3c741e8366ce436ddb82ae4ac7f50d))
 -   add error-block ([e2e37d8](https://github.com/taoyage/react-mobile-ui/commit/e2e37d8d3fc04e4f85309cd5a30b461cdb59ea8f))
 -   add grid && update document ([81e0b54](https://github.com/taoyage/react-mobile-ui/commit/81e0b547969610478c58f804c7155374d80f0fd3))
 -   add image ([f25a118](https://github.com/taoyage/react-mobile-ui/commit/f25a118912450b22ce86cd9f2f9289447dc39521))
