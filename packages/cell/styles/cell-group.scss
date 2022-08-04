@@ -1,0 +1,35 @@
+$class-prefix-cell-group: 'ygm-cell-group';
+
+.#{$class-prefix-cell-group} {
+  --cell-group-background: var(--ygm-color-background);
+  --cell-group-title-padding: var(--ygm-padding-s) var(--ygm-padding-l);
+  --cell-group-title-font-size: var(--ygm-font-size-m);
+  --cell-group-title-line-height: 16px;
+
+  --cell-group-card-padding: 0 var(--ygm-padding-l);
+  --cell-group-card-border-radius: var(--ygm-radius-m);
+
+  &-title {
+    padding: var(--cell-group-title-padding);
+    color: var(--ygm-color-weak);
+    font-size: var(--cell-group-title-font-size);
+    line-height: var(--cell-group-title-line-height);
+  }
+
+  &-content {
+    background: var(--cell-group-background);
+    overflow: hidden;
+  }
+
+  &-card {
+    margin: var(--cell-group-card-padding);
+
+    .#{$class-prefix-cell-group}-content {
+      border-radius: var(--cell-group-card-border-radius);
+    }
+
+    .#{$class-prefix-cell-group}-title {
+      padding-left: 0;
+    }
+  }
+}

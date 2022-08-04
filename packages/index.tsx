@@ -60,6 +60,15 @@ export { default as ActionSheet } from '@/action-sheet';
 export type { InfiniteScrollProps } from '@/infinite-scroll';
 export { default as InfiniteScroll } from '@/infinite-scroll';
 
+export type { CellGroupProps, CellProps } from '@/cell';
+export { default as Cell } from '@/cell';
+
+export type { EllipsisProps } from '@/ellipsis';
+export { default as Ellipsis } from '@/ellipsis';
+
+export type { SelectorProps } from '@/selector';
+export { default as Selector } from '@/selector';
+
 // hooks
 export { default as useMount } from '@/hooks/useMount';
 export { default as useEffectOnce } from '@/hooks/useEffectOnce';
@@ -71,3 +80,5 @@ export { default as useUpdateIsomorphicLayoutEffect } from '@/hooks/useUpdateIso
 export { default as useLockFn } from '@/hooks/useLockFn';
 export { default as useLatest } from '@/hooks/useLatest';
 export { default as useUnmount } from '@/hooks/useUnmount';
+export { default as useResizeObserver } from '@/hooks/useResizeObserver';
+export { default as useMemoizedFn } from '@/hooks/useMemoizedFn';
