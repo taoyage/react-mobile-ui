@@ -69,6 +69,9 @@ export { default as Ellipsis } from '@/ellipsis';
 export type { SelectorProps } from '@/selector';
 export { default as Selector } from '@/selector';
 
+export type { SliderProps } from '@/slider';
+export { default as Slider } from '@/slider';
+
 // hooks
 export { default as useMount } from '@/hooks/useMount';
 export { default as useEffectOnce } from '@/hooks/useEffectOnce';
