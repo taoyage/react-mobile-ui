@@ -1,4 +1,4 @@
-# 1.4.0 (2022-08-03)
+# 1.5.0 (2022-08-06)
 
 ### Bug Fixes
 
@@ -27,6 +27,7 @@
 -   完善 action-sheet 组件 ([3568355](https://github.com/taoyage/react-mobile-ui/commit/3568355d9002a6ddea5531b51f3bb4cfef314d2a))
 -   完善 infinite 组件 ([2081407](https://github.com/taoyage/react-mobile-ui/commit/20814073023f633d396dd2e6bf9982845d52aa6d))
 -   add button & card & nav-bar ([b1c53b4](https://github.com/taoyage/react-mobile-ui/commit/b1c53b4d071c98ae85bc6958081fc4d0eead9f58))
+-   add cell ([6fb7bcb](https://github.com/taoyage/react-mobile-ui/commit/6fb7bcb1665a9db52f67e88b8f70fa55a869ba37))
 -   add countdown ([67d3c74](https://github.com/taoyage/react-mobile-ui/commit/67d3c74e46d1bb28a7f63cadb80d72bd09e06917))
 -   add ellipsis ([073b991](https://github.com/taoyage/react-mobile-ui/commit/073b991b2d3c741e8366ce436ddb82ae4ac7f50d))
 -   add error-block ([e2e37d8](https://github.com/taoyage/react-mobile-ui/commit/e2e37d8d3fc04e4f85309cd5a30b461cdb59ea8f))
@@ -34,6 +35,7 @@
 -   add image ([f25a118](https://github.com/taoyage/react-mobile-ui/commit/f25a118912450b22ce86cd9f2f9289447dc39521))
 -   add infinite-scroll ([97973c8](https://github.com/taoyage/react-mobile-ui/commit/97973c885cad95136c79aadda4b22ec215a9fa3d))
 -   add input ([25d1ff4](https://github.com/taoyage/react-mobile-ui/commit/25d1ff4486255afc877d0f8681ed5c75758ec9bd))
+-   add licence ([d23feee](https://github.com/taoyage/react-mobile-ui/commit/d23feeed7a95cb5b3f9c59583775ea52007bd323))
 -   add popup ([7eb804e](https://github.com/taoyage/react-mobile-ui/commit/7eb804e8d58645a272b91b6165736c46e9396d36))
 -   add selector ([24f978c](https://github.com/taoyage/react-mobile-ui/commit/24f978c0ff4b4ec4822455196a21469196578fef))
 -   add side-bar ([05cc8f6](https://github.com/taoyage/react-mobile-ui/commit/05cc8f69754eb8a05c07e82eeec02a91ca771d17))
