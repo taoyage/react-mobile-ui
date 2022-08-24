@@ -1,4 +1,4 @@
-# 1.5.0 (2022-08-06)
+# 1.6.0 (2022-08-24)
 
 ### Bug Fixes
 
@@ -40,6 +40,7 @@
 -   add selector ([24f978c](https://github.com/taoyage/react-mobile-ui/commit/24f978c0ff4b4ec4822455196a21469196578fef))
 -   add side-bar ([05cc8f6](https://github.com/taoyage/react-mobile-ui/commit/05cc8f69754eb8a05c07e82eeec02a91ca771d17))
 -   add sidebar ([4fe21ed](https://github.com/taoyage/react-mobile-ui/commit/4fe21ed0fcf607fa8734b2c01d490db40e1847ad))
+-   add slider ([d6b4b0d](https://github.com/taoyage/react-mobile-ui/commit/d6b4b0dbda8e28b08f86f30575646f48fb1a76b0))
 -   add space && pull-to-refresh ([27114ed](https://github.com/taoyage/react-mobile-ui/commit/27114ed65e859688edff8ba0d68998b33d8beaaa))
 -   add swiper ([36410b1](https://github.com/taoyage/react-mobile-ui/commit/36410b1830d8c0885df970a7765278fb1844d254))
 -   add swiper ref ([b6fc9df](https://github.com/taoyage/react-mobile-ui/commit/b6fc9df4eed460f9541e5dea50e796f4908cde82))
