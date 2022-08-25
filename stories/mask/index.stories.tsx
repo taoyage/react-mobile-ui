@@ -4,19 +4,33 @@ import { Meta } from '@storybook/react';
 import Mask from '@/mask';
 import Button from '@/button';
 
+import DemoWrap from '../../demos/demo-wrap';
+import DemoBlock from '../../demos/demo-block';
+
 const MaskStory: Meta = {
   title: '反馈/Mask 遮罩层',
   component: Mask,
 };
 
 export const Basic = () => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-
+  const [visible1, setVisible1] = React.useState<boolean>(false);
+  const [visible2, setVisible2] = React.useState<boolean>(false);
   return (
-    <div>
-      <Button onClick={() => setVisible(true)}>显示遮罩层</Button>
-      <Mask visible={visible} onMaskClick={() => setVisible(false)} />
-    </div>
+    <DemoWrap>
+      <DemoBlock title="基本用法">
+        <Button onClick={() => setVisible1(true)}>显示遮罩</Button>
+        <Mask visible={visible1} onMaskClick={() => setVisible1(false)} />
+      </DemoBlock>
+
+      <DemoBlock title="自定义颜色">
+        <Button onClick={() => setVisible2(true)}>自定义颜色遮罩</Button>
+        <Mask
+          visible={visible2}
+          style={{ '--background': 'rgba(0, 0, 0, .2)' }}
+          onMaskClick={() => setVisible2(false)}
+        />
+      </DemoBlock>
+    </DemoWrap>
   );
 };
 
