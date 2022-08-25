@@ -1,37 +1,16 @@
-.ygm-mask {
-  z-index: 999;
+$class-prefix-mask: 'ygm-mask';
+
+.#{$class-prefix-mask} {
+  --z-index: 999;
+  --background: rgba(0, 0, 0, 0.55);
+
   position: fixed;
   top: 0;
   left: 0;
+  z-index: var(--z-index);
   width: 100%;
   height: 100%;
   display: block;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--background);
   overflow: hidden;
-
-  &-enter {
-    opacity: 0;
-  }
-
-  &-enter-active {
-    opacity: 1;
-    transition: opacity 0.3s ease-in;
-  }
-
-  &-enter-done {
-    opacity: 1;
-  }
-
-  &-exit {
-    opacity: 1;
-  }
-
-  &-exit-active {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-  }
-
-  &-exit-done {
-    opacity: 0;
-  }
 }
