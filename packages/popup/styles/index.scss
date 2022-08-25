@@ -1,108 +1,36 @@
 .ygm-popup {
-  z-index: 1001;
+  --z-index: 1000;
+
+  z-index: var(--z-index);
   position: fixed;
   background-color: var(--ygm-color-background);
 
-  &-position-left {
+  &-body {
+    position: fixed;
+    background-color: var(--ygm-color-white);
+    z-index: calc(var(--z-index) + 10);
+  }
+
+  &-left {
     height: 100%;
     top: 0;
     left: 0;
   }
 
-  &-position-bottom {
+  &-bottom {
     width: 100%;
     bottom: 0;
     left: 0;
   }
-  &-position-top {
+  &-top {
     width: 100%;
     top: 0;
     left: 0;
   }
 
-  &-position-right {
+  &-right {
     height: 100%;
     top: 0;
     right: 0;
-  }
-
-  &-left-enter {
-    transform: translate3d(-100%, 0, 0);
-    opacity: 0;
-  }
-
-  &-right-enter {
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-
-  &-top-enter {
-    transform: translate3d(0, -100%, 0);
-    opacity: 0;
-  }
-
-  &-bottom-enter {
-    transform: translate3d(0, 100%, 0);
-    opacity: 0;
-  }
-
-  &-enter-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.3s linear;
-  }
-
-  &-enter-done {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-
-  &-exit {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  &-left-exit-active {
-    opacity: 1;
-    transform: translate3d(-100%, 0, 0);
-    transition: all 0.3s linear;
-  }
-
-  &-right-exit-active {
-    opacity: 1;
-    transform: translate3d(100%, 0, 0);
-    transition: all 0.3s linear;
-  }
-
-  &-top-exit-active {
-    opacity: 1;
-    transform: translate3d(0, -100%, 0);
-    transition: all 0.3s linear;
-  }
-
-  &-bottom-exit-active {
-    opacity: 1;
-    transform: translate3d(0, 100%, 0);
-    transition: all 0.3s linear;
-  }
-
-  &-left-exit-done {
-    opacity: 1;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  &-right-exit-done {
-    opacity: 1;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  &-top-exit-done {
-    opacity: 1;
-    transform: translate3d(0, -100%, 0);
-  }
-
-  &-bottom-exit-done {
-    opacity: 1;
-    transform: translate3d(0, 100%, 0);
   }
 }

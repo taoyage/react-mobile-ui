@@ -16,6 +16,8 @@ export interface MaskProps {
 const classPrefix = 'ygm-mask';
 
 const Mask: React.FC<MaskProps> = (props) => {
+  const [active, setActive] = React.useState<boolean>(props.visible);
+
   useScrollLock(props.visible);
 
   const onMask = React.useCallback(
@@ -33,12 +35,18 @@ const Mask: React.FC<MaskProps> = (props) => {
       friction: 30,
       clamp: true,
     },
+    onStart: () => {
+      setActive(true);
+    },
+    onRest: () => {
+      setActive(props.visible);
+    },
   });
 
   return (
     <animated.div
       className={classPrefix}
-      style={{ ...props.style, opacity, display: props.visible ? undefined : 'none' }}
+      style={{ ...props.style, opacity, display: active ? undefined : 'none' }}
       onClick={onMask}
     />
   );
