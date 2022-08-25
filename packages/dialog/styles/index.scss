@@ -1,0 +1,8 @@
+$class-prefix-dialog: 'ygm-dialog';
+
+.#{$class-prefix-dialog} {
+  --z-index: var(1000);
+
+  position: fixed;
+  z-index: var(--z-index);
+}
