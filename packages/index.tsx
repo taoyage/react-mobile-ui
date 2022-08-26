@@ -72,8 +72,8 @@ export { default as Selector } from '@/selector';
 export type { SliderProps } from '@/slider';
 export { default as Slider } from '@/slider';
 
-export type { DialogProps } from '@/dialog';
-export { default as Dialog } from '@/dialog';
+export type { DialogProps } from '@/dialog/dialog';
+export { default as Dialog } from '@/dialog/dialog';
 
 // hooks
 export { default as useMount } from '@/hooks/useMount';

@@ -1,11 +1,19 @@
-.ygm-button {
+$class-prefix-button: 'ygm-button';
+
+.#{$class-prefix-button} {
   --base-button-padding: 7px 12px;
   --small-button-padding: 3px 12px;
   --middle-button-padding: var(--base-button-padding);
   --large-button-padding: 11px 12px;
 
-  color: var(--ygm-color-text);
-  background-color: var(--ygm-color-background);
+  --color: var(--ygm-color-white);
+  --text-color: var(--ygm-color-text);
+  --background-color: var(--ygm-color-background);
+  --border-color: var(--ygm-color-border);
+  --border-width: 1px;
+
+  color: var(--text-color);
+  background-color: var(--background-color);
   font-size: var(--ygm-font-size-l);
   position: relative;
   display: inline-block;
@@ -16,33 +24,51 @@
   text-align: center;
   border-radius: var(--ygm-radius-xs);
   user-select: none;
-  border: 1px solid var(--ygm-color-border);
-  color: var(--ygm-color-white);
+  border: var(--border-width) solid var(--border-color);
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
 
   &-default {
-    background-color: var(--ygm-color-background);
-    border-color: var(--ygm-color-border);
-    color: var(--ygm-color-text);
+    &.#{$class-prefix-button}-fill-outline {
+      --background-color: transparent;
+      --border-color: var(--ygm-color-text);
+    }
+
+    &.#{$class-prefix-button}-fill-none {
+      --background-color: transparent;
+      --border-width: 0px;
+    }
+  }
+
+  &:not(&-default) {
+    --text-color: var(--ygm-color-white);
+    --background-color: var(--color);
+    --border-color: var(--color);
+    &.#{$class-prefix-button}-fill-outline {
+      --text-color: var(--color);
+      --background-color: transparent;
+    }
+    &.#{$class-prefix-button}-fill-none {
+      --text-color: var(--color);
+      --background-color: transparent;
+      --border-width: 0px;
+    }
   }
 
   &-primary {
-    border-color: var(--ygm-color-primary);
-    background-color: var(--ygm-color-primary);
+    --color: var(--ygm-color-primary);
   }
-
   &-success {
-    border-color: var(--ygm-color-success);
-    background-color: var(--ygm-color-success);
+    --color: var(--ygm-color-success);
   }
-
   &-danger {
-    border-color: var(--ygm-color-danger);
-    background-color: var(--ygm-color-danger);
+    --color: var(--ygm-color-danger);
   }
-
   &-warning {
-    border-color: var(--ygm-color-warning);
-    background-color: var(--ygm-color-warning);
+    --color: var(--ygm-color-warning);
   }
 
   &-small {
@@ -57,5 +83,12 @@
   &-large {
     padding: var(--large-button-padding);
     font-size: var(--ygm-font-size-xl);
+  }
+
+  &-shape-rounded {
+    border-radius: 1000px;
+  }
+  &-shape-rectangular {
+    border-radius: 0;
   }
 }

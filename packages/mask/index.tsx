@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import useScrollLock from '@/hooks/useScrollLock';
 
 import './styles/index.scss';
@@ -35,13 +36,16 @@ const Mask: React.FC<MaskProps> = (props) => {
       friction: 30,
       clamp: true,
     },
-    onStart: () => {
-      setActive(true);
-    },
     onRest: () => {
       setActive(props.visible);
     },
   });
+
+  useIsomorphicLayoutEffect(() => {
+    if (props.visible) {
+      setActive(true);
+    }
+  }, [props.visible]);
 
   return (
     <animated.div

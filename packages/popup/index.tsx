@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useSpring, animated } from '@react-spring/web';
 
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import useScrollLock from '@/hooks/useScrollLock';
 
 import Mask from '@/mask';
@@ -41,9 +42,6 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
       tension: 300,
       friction: 30,
     },
-    onStart: () => {
-      setActive(true);
-    },
     onRest: () => {
       setActive(props.visible);
       if (props.visible) {
@@ -53,6 +51,12 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
       }
     },
   });
+
+  useIsomorphicLayoutEffect(() => {
+    if (props.visible) {
+      setActive(true);
+    }
+  }, [props.visible]);
 
   return (
     <div className={classPrefix} style={{ display: active ? undefined : 'none' }}>

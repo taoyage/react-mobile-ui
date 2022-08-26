@@ -1,8 +1,46 @@
 $class-prefix-dialog: 'ygm-dialog';
 
 .#{$class-prefix-dialog} {
-  --z-index: var(1000);
+  --z-index: 1000;
+  --max-width: 75vw;
+  --min-width: 280px;
+  --border-radius: var(--ygm-radius-xxxl);
+  --background-color: var(--ygm-color-background);
 
-  position: fixed;
   z-index: var(--z-index);
+  position: fixed;
+
+  &-wrap {
+    position: fixed;
+    z-index: calc(var(--z-index) + 10);
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: var(--min-width);
+    max-width: var(--max-width);
+    transform: translate(-50%, -50%);
+  }
+
+  &-body {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+  }
+
+  &-header {
+    padding: var(--ygm-padding-xxl) 12px 0;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: center;
+    font-size: var(--ygm-font-size-l);
+  }
+
+  &-content {
+    padding: 8px 12px 20px;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: var(--ygm-font-size-m);
+    line-height: 1.4;
+    color: var(--ygm-color-text);
+  }
 }
