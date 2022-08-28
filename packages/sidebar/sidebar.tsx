@@ -28,10 +28,14 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
     items.push(child);
   });
 
-  const onSetActive = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const key = (e.target as HTMLElement).dataset['key'];
-    setActiveKey(key as string);
-  }, []);
+  const onSetActive = React.useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      const key = (e.target as HTMLElement).dataset['key'];
+      setActiveKey(key as string);
+      props.onChange?.(key as string);
+    },
+    [props.onChange]
+  );
 
   return (
     <div className={classPrefix}>
