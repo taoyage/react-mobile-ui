@@ -1,4 +1,4 @@
-# 1.6.0 (2022-08-24)
+## 1.6.1 (2022-08-28)
 
 ### Bug Fixes
 
@@ -14,12 +14,15 @@
 -   fix global css variabale ([0c6b1ba](https://github.com/taoyage/react-mobile-ui/commit/0c6b1ba1f5b3ac0e442bc745a3528e4764a5890a))
 -   fix image && nav-bar ([8597421](https://github.com/taoyage/react-mobile-ui/commit/85974214ebc3b2c65479c795b5f9f30f46e3a6cf))
 -   fix package repository ([7db91e5](https://github.com/taoyage/react-mobile-ui/commit/7db91e51f84f8d22124d8cee0af274e666fbb94b))
+-   fix popup animat ([28fbd3b](https://github.com/taoyage/react-mobile-ui/commit/28fbd3ba68080e60e8f5daa1a94d26bde90714b4))
+-   fix sidebar onchange event ([65c58d1](https://github.com/taoyage/react-mobile-ui/commit/65c58d1ef3b914c34bcca03d016485005596bb4c))
 -   fix space style ([5bae7c4](https://github.com/taoyage/react-mobile-ui/commit/5bae7c40b224ad095a9f5ec4f6242c61aaf9930f))
 -   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
 -   fix tabs props ([7cab6e9](https://github.com/taoyage/react-mobile-ui/commit/7cab6e940d35b98a1ec42c4af0482042ac43407b))
 -   fix unit format ([dd590ef](https://github.com/taoyage/react-mobile-ui/commit/dd590ef2fba004dcbfbcb1bba587010f24797ee7))
 -   optimize image component ([01acd68](https://github.com/taoyage/react-mobile-ui/commit/01acd68a87c5f3999fa0a62e6e0931f495bfbd7b))
 -   sass 头部添加变量引用链接 ([9f6fa8b](https://github.com/taoyage/react-mobile-ui/commit/9f6fa8b5fa6021d26ea912cb5a6485683d8e03d5))
+-   update mask component ([d9f8c81](https://github.com/taoyage/react-mobile-ui/commit/d9f8c810f7db3145fd3bacc2756fe912cb91ddc3))
 
 ### Features
 

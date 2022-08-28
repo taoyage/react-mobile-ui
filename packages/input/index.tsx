@@ -7,6 +7,12 @@ import './styles/index.scss';
 
 type TStyle = Partial<Record<'--color' | '--placeholder-color', string>>;
 
+export interface InputRef {
+  clear: () => void;
+  focus: () => void;
+  blur: () => void;
+}
+
 export interface InputProps {
   id?: string;
   value?: string;
@@ -45,8 +51,24 @@ export interface InputProps {
 
 const classPrefix = `ygm-input`;
 
-const Input: React.FC<InputProps> = React.memo((props) => {
+const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
   const [value, setValue] = React.useState<string>(props.value!);
+  const nativeInputRef = React.useRef<HTMLInputElement | null>(null);
+
+  React.useImperativeHandle(ref, () => ({
+    clear: () => {
+      setValue('');
+    },
+    focus: () => {
+      nativeInputRef.current?.focus();
+    },
+    blur: () => {
+      nativeInputRef.current?.blur();
+    },
+    get nativeElement() {
+      return nativeInputRef.current;
+    },
+  }));
 
   const handleKeydown = React.useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -66,6 +88,7 @@ const Input: React.FC<InputProps> = React.memo((props) => {
   return (
     <div className={cx(classPrefix, { [`${classPrefix}-disabled`]: props.disabled })}>
       <input
+        ref={nativeInputRef}
         id={props.id}
         style={props.style}
         className={`${classPrefix}-element`}
@@ -118,12 +141,12 @@ const Input: React.FC<InputProps> = React.memo((props) => {
 });
 
 Input.defaultProps = {
-  value: '',
-  id: 'ygm-input',
-  type: 'text',
   autoComplete: 'off',
   autoCapitalize: 'off',
   autoCorrect: 'off',
+  value: '',
+  id: 'ygm-input',
+  type: 'text',
 };
 
 Input.displayName = 'Input';

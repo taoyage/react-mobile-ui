@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '@/input';
+import Input, { InputRef } from '@/input';
 
 import { SearchOutline } from 'antd-mobile-icons';
 
@@ -10,6 +10,8 @@ const classPrefix = `ygm-search-bar`;
 type TStyle = Partial<
   Record<'--color' | '--background' | '--search-background' | '--border-radius' | '--placeholder-color', string>
 >;
+
+export type SearchbarRef = InputRef;
 
 export interface SearchBarProps {
   value?: string;
@@ -27,30 +29,36 @@ export interface SearchBarProps {
   onClear?: () => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = React.memo((props) => {
+const SearchBar = React.forwardRef<SearchbarRef, SearchBarProps>((props, ref) => {
   const [value, setValue] = React.useState<string>(props.value!);
   const composingRef = React.useRef<boolean>(false);
+  const inputRef = React.useRef<InputRef>(null);
 
-  const onChange = React.useCallback(
-    (value: string) => {
-      setValue(value);
-      props.onChange?.(value);
-    },
-    [props.onChange]
-  );
+  React.useImperativeHandle(ref, () => ({
+    clear: () => inputRef.current?.clear(),
+    focus: () => inputRef.current?.focus(),
+    blur: () => inputRef.current?.blur(),
+  }));
 
-  const onEnterPress = React.useCallback(() => {
+  const onChange = (value: string) => {
+    setValue(value);
+    props.onChange?.(value);
+  };
+
+  const onEnterPress = () => {
     // 在拼音输入法输入汉字时，避免enter键的搜索触发
     if (!composingRef.current) {
+      inputRef.current?.blur();
       props.onSearch?.(value);
     }
-  }, [props.onSearch]);
+  };
 
   return (
     <div className={classPrefix} style={props.style}>
       <div className={`${classPrefix}-content`}>
         <div className={`${classPrefix}-content-icon`}>{props.icon}</div>
         <Input
+          ref={inputRef}
           className={`${classPrefix}-content-input`}
           style={{ '--placeholder-color': props.style?.['--placeholder-color'], '--color': props.style?.['--color'] }}
           placeholder={props.placeholder}
