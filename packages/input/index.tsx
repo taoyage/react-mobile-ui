@@ -65,9 +65,6 @@ const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
     blur: () => {
       nativeInputRef.current?.blur();
     },
-    get nativeElement() {
-      return nativeInputRef.current;
-    },
   }));
 
   const handleKeydown = React.useCallback(
