@@ -45,13 +45,13 @@ export type { GridProps, GridItemProps } from '@/grid';
 export type { ErrorBlockProps } from '@/error-block';
 export { default as ErrorBlock } from '@/error-block';
 
-export type { InputProps } from '@/input';
+export type { InputProps, InputRef } from '@/input';
 export { default as Input } from '@/input';
 
 export type { SidebarProps } from '@/sidebar';
 export { default as Sidebar } from '@/sidebar';
 
-export type { SearchBarProps } from '@/search-bar';
+export type { SearchBarProps, SearchBarRef } from '@/search-bar';
 export { default as SearchBar } from '@/search-bar';
 
 export type { ActionSheetProps, Action } from '@/action-sheet';

@@ -11,7 +11,7 @@ type TStyle = Partial<
   Record<'--color' | '--background' | '--search-background' | '--border-radius' | '--placeholder-color', string>
 >;
 
-export type SearchbarRef = InputRef;
+export type SearchBarRef = InputRef;
 
 export interface SearchBarProps {
   value?: string;
@@ -29,7 +29,7 @@ export interface SearchBarProps {
   onClear?: () => void;
 }
 
-const SearchBar = React.forwardRef<SearchbarRef, SearchBarProps>((props, ref) => {
+const SearchBar = React.forwardRef<SearchBarRef, SearchBarProps>((props, ref) => {
   const [value, setValue] = React.useState<string>(props.value!);
   const composingRef = React.useRef<boolean>(false);
   const inputRef = React.useRef<InputRef>(null);
