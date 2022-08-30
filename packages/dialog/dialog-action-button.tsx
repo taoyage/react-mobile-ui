@@ -4,7 +4,7 @@ import Button from '@/button';
 export interface Action {
   key: string;
   text: React.ReactNode;
-  danger?: boolean;
+  color?: 'danger' | 'primary' | 'default';
   disabled?: boolean;
   onClick?: () => void | Promise<void>;
 }
@@ -14,15 +14,19 @@ interface DialogActionButtonProps {
   onAction: () => void | Promise<void>;
 }
 
+const classPrefix = 'ygm-dialog-button';
+
 const DialogActionButton: React.FC<DialogActionButtonProps> = (props) => {
   return (
     <Button
       key={props.action.key}
+      className={classPrefix}
       onClick={props.onAction}
-      color={props.action.danger ? 'danger' : 'primary'}
+      color={props.action.color}
       disabled={props.action.disabled}
       block
       shape="rectangular"
+      fill="none"
     >
       {props.action.text}
     </Button>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
-import Mask from '@/mask';
-import type { MaskProps } from '@/mask';
+import Mask, { MaskProps } from '@/mask';
+import DialogActionButton, { Action } from '@/dialog/dialog-action-button';
 
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 
@@ -13,9 +13,18 @@ export interface DialogProps {
   title?: React.ReactNode;
   content?: React.ReactNode;
   visible?: boolean;
+  actions?: Action[];
   maskStyle?: MaskProps['style'];
+  /** 点击action后是否关闭 */
+  closeOnAction?: boolean;
   /** Dialog关闭时的回调 */
   onClose?: () => void;
+  /** 显示后回调 */
+  afterShow?: () => void;
+  /** 关闭后回调 */
+  afterClose?: () => void;
+  /** 点击action后回调 */
+  onAction?: (action: Action, index: number) => void | Promise<void>;
 }
 
 const classPrefix = 'ygm-dialog';
@@ -32,8 +41,13 @@ const Dialog: React.FC<DialogProps> = (props) => {
       friction: 25,
       clamp: true,
     },
-    onReset: () => {
+    onRest: () => {
       setActive(props.visible!);
+      if (props.visible) {
+        props.afterShow?.();
+      } else {
+        props.afterClose?.();
+      }
     },
   });
 
@@ -52,13 +66,32 @@ const Dialog: React.FC<DialogProps> = (props) => {
 
   const renderContent = () => {
     if (props.content) {
-      return <div className={`${classPrefix}-content`}>{props.content}</div>;
+      return (
+        <div className={`${classPrefix}-content`}>
+          <div>{props.content}</div>
+        </div>
+      );
     }
     return null;
   };
 
   const renderFooter = () => {
-    return <div className={`${classPrefix}-footer`}>footer</div>;
+    return (
+      <div className={`${classPrefix}-footer`}>
+        {props.actions!.map((action, index) => (
+          <DialogActionButton
+            key={action.key}
+            action={action}
+            onAction={async () => {
+              await Promise.all([action.onClick?.(), props.onAction?.(action, index)]);
+              if (props.closeOnAction) {
+                props.onClose?.();
+              }
+            }}
+          />
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -79,6 +112,7 @@ const Dialog: React.FC<DialogProps> = (props) => {
 
 Dialog.defaultProps = {
   visible: false,
+  actions: [] as Action[],
 };
 
 Dialog.displayName = 'Dialog';

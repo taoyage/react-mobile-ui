@@ -24,6 +24,7 @@ $class-prefix-dialog: 'ygm-dialog';
   &-body {
     background-color: var(--background-color);
     border-radius: var(--border-radius);
+    overflow: hidden;
   }
 
   &-header {
@@ -35,12 +36,35 @@ $class-prefix-dialog: 'ygm-dialog';
   }
 
   &-content {
-    padding: 8px 12px 20px;
+    padding: 26px 12px;
     max-height: 70vh;
     overflow-x: hidden;
     overflow-y: auto;
     font-size: var(--ygm-font-size-m);
     line-height: 1.4;
     color: var(--ygm-color-text);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-footer {
+    user-select: none;
+    display: flex;
+    align-items: stretch;
+    border-top: 0.5px solid var(--ygm-color-border);
+
+    > .ygm-dialog-button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 0;
+      font-size: var(--ygm-font-size-m);
+      border-right: solid 0.5px var(--ygm-color-border);
+      line-height: 25px;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }
