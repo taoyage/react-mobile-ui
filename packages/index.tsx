@@ -75,16 +75,4 @@ export { default as Slider } from '@/slider';
 export type { DialogProps } from '@/dialog/dialog';
 export { default as Dialog } from '@/dialog/dialog';
 
-// hooks
-export { default as useMount } from '@/hooks/useMount';
-export { default as useEffectOnce } from '@/hooks/useEffectOnce';
-export { default as useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-export { default as useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
-export { default as useScrollLock } from '@/hooks/useScrollLock';
-export { default as useUpdateEffect } from '@/hooks/useUpdateEffect';
-export { default as useUpdateIsomorphicLayoutEffect } from '@/hooks/useUpdateIsomorphicLayoutEffect';
-export { default as useLockFn } from '@/hooks/useLockFn';
-export { default as useLatest } from '@/hooks/useLatest';
-export { default as useUnmount } from '@/hooks/useUnmount';
-export { default as useResizeObserver } from '@/hooks/useResizeObserver';
-export { default as useMemoizedFn } from '@/hooks/useMemoizedFn';
+export { default as hooks } from '@/hooks';
