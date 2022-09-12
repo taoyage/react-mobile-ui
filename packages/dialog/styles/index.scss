@@ -18,7 +18,7 @@ $class-prefix-dialog: 'ygm-dialog';
     width: auto;
     min-width: var(--min-width);
     max-width: var(--max-width);
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
   }
 
   &-body {
@@ -36,12 +36,13 @@ $class-prefix-dialog: 'ygm-dialog';
   }
 
   &-content {
+    width: auto;
     padding: 26px 12px;
     max-height: 70vh;
     overflow-x: hidden;
     overflow-y: auto;
     font-size: var(--ygm-font-size-m);
-    line-height: 1.4;
+    line-height: 20px;
     color: var(--ygm-color-text);
     display: flex;
     justify-content: center;

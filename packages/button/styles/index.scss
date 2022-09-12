@@ -88,7 +88,18 @@ $class-prefix-button: 'ygm-button';
   &-shape-rounded {
     border-radius: 1000px;
   }
+
   &-shape-rectangular {
     border-radius: 0;
+  }
+
+  &-loading-wrap {
+    display: flex;
+    height: 1.4em;
+    align-items: center;
+    justify-content: center;
+    > .ygm-spinner-loading {
+      opacity: 0.6;
+    }
   }
 }

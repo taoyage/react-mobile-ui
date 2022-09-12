@@ -1,6 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 
+import SpinnerLoading from '@/spinner-loading';
+import { isPromise } from '@/utils/validate';
+
 import './styles/index.scss';
 
 export interface ButtonProps {
@@ -10,14 +13,36 @@ export interface ButtonProps {
   fill?: 'solid' | 'outline' | 'none';
   children?: React.ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => Promise<void> | unknown;
   block?: boolean;
   disabled?: boolean;
+  loading?: boolean | 'auto';
+  loadingIcon?: React.ReactNode;
 }
 
 const classPrefix = 'ygm-button';
 
-const Button: React.FC<ButtonProps> = React.memo((props) => {
+const Button: React.FC<ButtonProps> = (props) => {
+  const [innerLoading, setInnerLoading] = React.useState(false);
+  const loading = props.loading === 'auto' ? innerLoading : props.loading;
+
+  const onButtonClick = async (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!props.onClick) return;
+
+    const promise = props.onClick(e);
+
+    if (isPromise(promise)) {
+      try {
+        setInnerLoading(true);
+        await promise;
+        setInnerLoading(false);
+      } catch (e) {
+        setInnerLoading(false);
+        throw e;
+      }
+    }
+  };
+
   return (
     <div
       className={cx(
@@ -32,18 +57,20 @@ const Button: React.FC<ButtonProps> = React.memo((props) => {
           [`${classPrefix}-disabled`]: props.disabled,
         }
       )}
-      onClick={props.onClick}
+      onClick={onButtonClick}
     >
-      {props.children}
+      {loading ? <div className={`${classPrefix}-loading-wrap`}>{props.loadingIcon}</div> : props.children}
     </div>
   );
-});
+};
 
 Button.defaultProps = {
   color: 'default',
   size: 'middle',
   shape: 'default',
   fill: 'solid',
+  loading: false,
+  loadingIcon: <SpinnerLoading size={16} />,
 };
 
 Button.displayName = 'Button';

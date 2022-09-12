@@ -27,6 +27,7 @@ const DialogActionButton: React.FC<DialogActionButtonProps> = (props) => {
       block
       shape="rectangular"
       fill="none"
+      loading="auto"
     >
       {props.action.text}
     </Button>

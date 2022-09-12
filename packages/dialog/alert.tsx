@@ -5,26 +5,29 @@ import show from '@/dialog/show';
 
 export type DialogAlertProps = Omit<DialogProps, 'visible' | 'closeOnAction' | 'actions'> & {
   confirmText?: React.ReactNode;
-  onConfirm?: () => void;
+  onConfirm?: () => void | Promise<void>;
 };
 
 const alert = (props: DialogAlertProps) => {
   const { confirmText = '确认' } = props;
 
-  return show({
-    ...props,
-    closeOnAction: true,
-    actions: [
-      {
-        key: 'confirm',
-        text: confirmText,
-        color: 'primary',
+  return new Promise<void>((resolve) => {
+    show({
+      ...props,
+      closeOnAction: true,
+      actions: [
+        {
+          key: 'confirm',
+          text: confirmText,
+          color: 'primary',
+        },
+      ],
+      onAction: props.onConfirm,
+      onClose: () => {
+        props.onClose?.();
+        resolve();
       },
-    ],
-    onAction: props.onConfirm,
-    onClose: () => {
-      props.onClose?.();
-    },
+    });
   });
 };
 

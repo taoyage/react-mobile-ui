@@ -63,7 +63,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
       <Mask visible={props.visible} onMaskClick={props.onMaskClick} />
 
       <animated.div
-        className={cx(`${classPrefix}-body`, `${classPrefix}-${props.position}`)}
+        className={cx(`${classPrefix}-body`, `${classPrefix}-${props.position}`, props.className)}
         style={{
           ...props.style,
           transform: percent.to((v) => {

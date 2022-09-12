@@ -36,7 +36,7 @@ const Dialog: React.FC<DialogProps> = (props) => {
     scale: props.visible ? 1 : 0.8,
     opacity: props.visible ? 1 : 0,
     config: {
-      mass: 1.2,
+      mass: 2.2,
       tension: 200,
       friction: 25,
       clamp: true,
