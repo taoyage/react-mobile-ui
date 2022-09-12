@@ -75,4 +75,7 @@ export { default as Slider } from '@/slider';
 export type { DialogProps } from '@/dialog/dialog';
 export { default as Dialog } from '@/dialog/dialog';
 
+export type { DividerProps } from '@/divider';
+export { default as Divider } from '@/divider';
+
 export { default as hooks } from '@/hooks';
