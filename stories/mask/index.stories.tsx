@@ -15,6 +15,7 @@ const MaskStory: Meta = {
 export const Basic = () => {
   const [visible1, setVisible1] = React.useState<boolean>(false);
   const [visible2, setVisible2] = React.useState<boolean>(false);
+
   return (
     <DemoWrap>
       <DemoBlock title="基本用法">

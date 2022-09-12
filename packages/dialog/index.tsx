@@ -1,17 +1,20 @@
-import React from 'react';
+import InternalDialog from '@/dialog/dialog';
+import alert from '@/dialog/alert';
+import confirm from '@/dialog/confirm';
 
-export interface DialogProps {
-  header?: React.ReactNode;
-  title?: React.ReactNode;
-  content?: React.ReactNode;
-  /** Dialog关闭时的回调 */
-  onClose?: () => void;
+export type { DialogProps } from '@/dialog/dialog';
+export type { DialogAlertProps } from '@/dialog/alert';
+
+type InternalDialogType = typeof InternalDialog;
+
+export interface DialogInterface extends InternalDialogType {
+  alert: typeof alert;
+  confirm: typeof confirm;
 }
 
-const Dialog: React.FC<DialogProps> = () => {
-  return <>1</>;
-};
+const Dialog = InternalDialog as DialogInterface;
 
-Dialog.displayName = 'Dialog';
+Dialog.alert = alert;
+Dialog.confirm = confirm;
 
 export default Dialog;

@@ -1,0 +1,71 @@
+$class-prefix-dialog: 'ygm-dialog';
+
+.#{$class-prefix-dialog} {
+  --z-index: 1000;
+  --max-width: 75vw;
+  --min-width: 280px;
+  --border-radius: var(--ygm-radius-xxxl);
+  --background-color: var(--ygm-color-background);
+
+  z-index: var(--z-index);
+  position: fixed;
+
+  &-wrap {
+    position: fixed;
+    z-index: calc(var(--z-index) + 10);
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: var(--min-width);
+    max-width: var(--max-width);
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &-body {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  &-header {
+    padding: var(--ygm-padding-xxl) 12px 0;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: center;
+    font-size: var(--ygm-font-size-l);
+  }
+
+  &-content {
+    width: auto;
+    padding: 26px 12px;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: var(--ygm-font-size-m);
+    line-height: 20px;
+    color: var(--ygm-color-text);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-footer {
+    user-select: none;
+    display: flex;
+    align-items: stretch;
+    border-top: 0.5px solid var(--ygm-color-border);
+
+    > .ygm-dialog-button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 0;
+      font-size: var(--ygm-font-size-m);
+      border-right: solid 0.5px var(--ygm-color-border);
+      line-height: 25px;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

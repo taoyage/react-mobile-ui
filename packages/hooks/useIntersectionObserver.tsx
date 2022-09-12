@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Options extends IntersectionObserverInit {
+export interface Options extends IntersectionObserverInit {
   freezeOnceVisible?: boolean;
 }
 

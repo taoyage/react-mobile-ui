@@ -18,7 +18,6 @@ const Toast: React.FC<ToastProps> = React.memo(({ icon, duration, content, after
   const [_, setVisible] = React.useState<boolean>(true);
 
   const iconElement = React.useMemo(() => {
-    console.log(icon);
     if (icon === null || icon === undefined) return null;
     switch (icon) {
       case 'success':
