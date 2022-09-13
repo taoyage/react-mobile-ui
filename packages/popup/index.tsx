@@ -19,8 +19,10 @@ export interface PopupProps {
   /** 是否可见 */
   visible: boolean;
   children?: React.ReactNode;
+  /** 是否展示蒙层 */
+  mask?: boolean;
   /** 点击蒙层回调 */
-  onMaskClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onMaskClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   /** 显示后回调 */
   afterShow?: () => void;
   /** 关闭后回调 */
@@ -60,7 +62,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
 
   return (
     <div className={classPrefix} style={{ display: active ? undefined : 'none' }}>
-      <Mask visible={props.visible} onMaskClick={props.onMaskClick} />
+      {props.mask && <Mask visible={props.visible} onMaskClick={props.onMaskClick} />}
 
       <animated.div
         className={cx(`${classPrefix}-body`, `${classPrefix}-${props.position}`, props.className)}
@@ -92,6 +94,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
 Popup.defaultProps = {
   visible: false,
   position: 'left',
+  mask: true,
 };
 
 export default Popup;
