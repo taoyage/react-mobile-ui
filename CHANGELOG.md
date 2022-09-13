@@ -1,4 +1,4 @@
-## 1.7.3 (2022-09-12)
+## 1.7.4 (2022-09-13)
 
 ### Bug Fixes
 
@@ -7,6 +7,7 @@
 -   修复样式引用错误 ([3a7a125](https://github.com/taoyage/react-mobile-ui/commit/3a7a125dbee7fc8211a0547a50689aec659d2995))
 -   修复 navbar 高度问题 && swiper 动画过度失效问题 ([b49761f](https://github.com/taoyage/react-mobile-ui/commit/b49761f92ac95537248aa863cebecaa1284c4cdf))
 -   修复 swiper 动画闪动问题 && 补充 swiper 文档 ([faa1d69](https://github.com/taoyage/react-mobile-ui/commit/faa1d69eba7718f32cfcf9f45a2d762d172ee1f5))
+-   add mask props ([a6a58ae](https://github.com/taoyage/react-mobile-ui/commit/a6a58ae15a67a45565ac93a19a1ab83a1b005043))
 -   add ref to input components ([60ae0c0](https://github.com/taoyage/react-mobile-ui/commit/60ae0c0fef79cdf942de867e4df784419b532e18))
 -   change image drag to false ([fd74c1e](https://github.com/taoyage/react-mobile-ui/commit/fd74c1ef7a363549816f4b5b5d110c5cbf6d0663))
 -   export hooks ([839150b](https://github.com/taoyage/react-mobile-ui/commit/839150b4d63d6fd176b745d5836a20487b7bb4bd))
