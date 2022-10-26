@@ -1,4 +1,5 @@
 import React from 'react';
+import SwiperItem from '@/swiper/swiper-item';
 import SwiperPageIndicator from '@/swiper/swiper-page-indicator';
 
 import { getTouchEventData } from '@/utils/event';
@@ -35,7 +36,24 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   const intervalRef = React.useRef<number>(0);
   const autoPlaying = React.useRef<boolean>(false);
 
-  const count = React.useMemo(() => React.Children.count(props.children), [props.children]);
+  const { validChildren, count } = React.useMemo(() => {
+    let count = 0;
+    const validChildren = React.Children.map(props.children, (child) => {
+      // 验证对象是否是一个 React 元素
+      if (!React.isValidElement(child)) return null;
+
+      // 验证是否是一个SwiperItem类型
+      if (child.type !== SwiperItem) {
+        console.warn('Swiper children must be Swiper.Item components');
+        return null;
+      }
+
+      count++;
+      return child;
+    });
+
+    return { validChildren, count };
+  }, [props.children]);
 
   const getTransition = React.useCallback(
     (position: number) => {
@@ -74,7 +92,7 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
   const renderSwiperItem = React.useCallback(() => {
     return (
       <div className="ygm-swiper-track-inner">
-        {React.Children.map(props.children, (child, index) => {
+        {React.Children.map(validChildren, (child, index) => {
           const position = getFinalPosition(index);
 
           return (
@@ -93,7 +111,7 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
         })}
       </div>
     );
-  }, [props.children, getFinalPosition, getTransition]);
+  }, [getFinalPosition, getTransition, validChildren]);
 
   const boundIndex = React.useCallback(
     (currentIndex: number) => {
@@ -200,6 +218,11 @@ const Swiper = React.forwardRef<SwiperRef, SwiperProps>((props, ref) => {
       clearInterval(intervalRef.current);
     };
   }, [dragging, props.autoplay, props.autoplayInterval, swipeNext]);
+
+  if (count === 0 || !validChildren) {
+    console.warn('Swiper at least one child element is required');
+    return null;
+  }
 
   return (
     <div className="ygm-swiper" style={props.style}>
