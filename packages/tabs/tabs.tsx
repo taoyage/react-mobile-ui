@@ -5,22 +5,31 @@ import Tab from '@/tabs/tab';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import useUpdateIsomorphicLayoutEffect from '@/hooks/useUpdateIsomorphicLayoutEffect';
 
+import { traverseReactNode } from '@/utils/traverse-react-node';
+
 import './styles/index.scss';
 
 export interface TabsProps {
+  /** 当前激活tab面板的key */
   activeKey: string;
   children?: React.ReactNode;
+  /** 是否显示tab下划线 */
   showTabLine?: boolean;
+  /** tab展示形式 */
   type?: 'line' | 'card';
+  /** 点击tab切换后回调 */
   onChange?: (key: string) => void;
+  /** 激活的tab样式 */
   tabActiveClassName?: string;
+  /** tab列表样式 */
   tabListClassName?: string;
+  /** tab内容样式 */
   tabContentClassName?: string;
 }
 
 const classPrefix = 'ygm-tabs';
 
-const Tabs: React.FC<TabsProps> = React.memo((props) => {
+const Tabs: React.FC<TabsProps> = (props) => {
   const [activeKey, setActiveKey] = React.useState<string>(props.activeKey);
   const [activeLineStyle, setActiveLineStyle] = React.useState({
     width: 0,
@@ -32,7 +41,7 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
   const keyToIndexRecord: Record<string, number> = React.useMemo(() => ({}), []);
   const panes: React.ReactElement<React.ComponentProps<typeof Tab>>[] = [];
 
-  React.Children.forEach(props.children, (child) => {
+  traverseReactNode(props.children, (child) => {
     if (!React.isValidElement(child)) return;
     if (!child.key) return;
     const length = panes.push(child);
@@ -130,7 +139,7 @@ const Tabs: React.FC<TabsProps> = React.memo((props) => {
       )}
     </div>
   );
-});
+};
 
 Tabs.defaultProps = {
   showTabLine: true,

@@ -1,10 +1,11 @@
 $class-prefix-space: 'ygm-space';
 
 .#{$class-prefix-space} {
-  display: inline-flex;
   --gap: 8px;
   --gap-vertical: var(--gap);
   --gap-horizontal: var(--gap);
+
+  display: inline-flex;
 
   &-horizontal {
     flex-direction: row;

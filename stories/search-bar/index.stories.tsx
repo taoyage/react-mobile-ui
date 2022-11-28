@@ -13,6 +13,7 @@ const SearchBarStories: Meta = {
 };
 
 export const Basic = () => {
+  const ref = React.useRef(null);
   const onClear = () => {
     Toast.show('清除');
   };
@@ -28,7 +29,7 @@ export const Basic = () => {
       </DemoBlock>
 
       <DemoBlock title="事件监听">
-        <SearchBar placeholder="请输入搜索关键词" onClear={onClear} onSearch={onSearch} showCancel />
+        <SearchBar placeholder="请输入搜索关键词" ref={ref} onClear={onClear} onSearch={onSearch} showCancel />
       </DemoBlock>
 
       <DemoBlock title="禁用搜索框">

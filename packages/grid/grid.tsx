@@ -2,8 +2,6 @@ import React from 'react';
 
 import './styles/grid.scss';
 
-const classPrefix = 'ygm-grid';
-
 export interface GridProps {
   columns: number;
   gap?: number | string | [number | string, number | string];
@@ -12,7 +10,9 @@ export interface GridProps {
 
 const formatGap = (gap: string | number) => (typeof gap === 'number' ? `${gap}px` : gap);
 
-const Grid: React.FC<GridProps> = React.memo((props) => {
+const classPrefix = 'ygm-grid';
+
+const Grid: React.FC<GridProps> = (props) => {
   const style = React.useMemo(() => {
     if (props.gap !== undefined) {
       if (Array.isArray(props.gap)) {
@@ -34,7 +34,7 @@ const Grid: React.FC<GridProps> = React.memo((props) => {
       {props.children}
     </div>
   );
-});
+};
 
 Grid.displayName = 'Grid';
 

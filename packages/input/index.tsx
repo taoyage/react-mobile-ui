@@ -11,6 +11,7 @@ export interface InputRef {
   clear: () => void;
   focus: () => void;
   blur: () => void;
+  setValue: (val: string) => void;
 }
 
 export interface InputProps {
@@ -21,7 +22,6 @@ export interface InputProps {
   /** 是否显示清除icon */
   clearable?: boolean;
   style?: React.CSSProperties & TStyle;
-
   autoFocus?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
@@ -41,7 +41,6 @@ export interface InputProps {
   onCompositionStart?: React.CompositionEventHandler<HTMLInputElement>;
   onCompositionEnd?: React.CompositionEventHandler<HTMLInputElement>;
   onClick?: React.MouseEventHandler<HTMLInputElement>;
-
   onEnterPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onChange?: (val: string) => void;
   onClear?: () => void;
@@ -64,6 +63,9 @@ const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
     },
     blur: () => {
       nativeInputRef.current?.blur();
+    },
+    setValue: (val: string) => {
+      setValue(val);
     },
   }));
 
@@ -111,12 +113,8 @@ const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
           setValue(e.target.value);
           props.onChange?.(e.target.value);
         }}
-        onFocus={(e) => {
-          props?.onFocus?.(e);
-        }}
-        onBlur={(e) => {
-          props?.onBlur?.(e);
-        }}
+        onFocus={props.onFocus}
+        onBlur={props.onBlur}
       />
 
       {showClearable && (

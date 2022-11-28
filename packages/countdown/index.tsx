@@ -35,7 +35,7 @@ const Countdown: React.FC<CountdownProps> = React.memo((props) => {
   const setCountdownTimeItems = React.useCallback(() => {
     if (computeTimeRef.current <= 0) {
       setTimeEnd(true);
-      clearInterval(timerRef.current);
+      clearTimeout(timerRef.current);
     }
 
     const timeItems = getTimeItems(props.format!, computeTimeRef.current);
@@ -43,7 +43,7 @@ const Countdown: React.FC<CountdownProps> = React.memo((props) => {
   }, [props.format]);
 
   const initCountdown = React.useCallback(() => {
-    clearInterval(timerRef.current);
+    clearTimeout(timerRef.current);
     // 当前时间
     const now = Date.now();
     // 获得剩余毫秒数
@@ -57,7 +57,7 @@ const Countdown: React.FC<CountdownProps> = React.memo((props) => {
   useIsomorphicLayoutEffect(() => {
     initCountdown();
 
-    return () => clearInterval(timerRef.current);
+    return () => clearTimeout(timerRef.current);
   }, [initCountdown]);
 
   return (

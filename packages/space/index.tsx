@@ -25,7 +25,7 @@ const classPrefix = `ygm-space`;
 
 const formatGap = (gap: string | number) => (typeof gap === 'number' ? `${gap}px` : gap);
 
-const Space: React.FC<SpaceProps> = React.memo((props) => {
+const Space: React.FC<SpaceProps> = (props) => {
   const style = React.useMemo(() => {
     if (props.gap) {
       if (Array.isArray(props.gap)) {
@@ -57,7 +57,7 @@ const Space: React.FC<SpaceProps> = React.memo((props) => {
       })}
     </div>
   );
-});
+};
 
 Space.defaultProps = {
   direction: 'horizontal',

@@ -38,6 +38,7 @@ const SearchBar = React.forwardRef<SearchBarRef, SearchBarProps>((props, ref) =>
     clear: () => inputRef.current?.clear(),
     focus: () => inputRef.current?.focus(),
     blur: () => inputRef.current?.blur(),
+    setValue: (val: string) => inputRef.current?.setValue(val),
   }));
 
   const onChange = (value: string) => {
