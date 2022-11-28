@@ -1,4 +1,4 @@
-## 1.7.4 (2022-09-13)
+## 1.7.6 (2022-11-28)
 
 ### Bug Fixes
 
@@ -12,6 +12,7 @@
 -   change image drag to false ([fd74c1e](https://github.com/taoyage/react-mobile-ui/commit/fd74c1ef7a363549816f4b5b5d110c5cbf6d0663))
 -   export hooks ([839150b](https://github.com/taoyage/react-mobile-ui/commit/839150b4d63d6fd176b745d5836a20487b7bb4bd))
 -   export inputRef && searchBarRef ([ff9ed8c](https://github.com/taoyage/react-mobile-ui/commit/ff9ed8cef6482ea7736e8e4f54f08b85b7c833b1))
+-   fix code ([028ddf3](https://github.com/taoyage/react-mobile-ui/commit/028ddf34acf56a70fdee8f979d385b43bb6be0b2))
 -   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
 -   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
 -   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
@@ -26,6 +27,7 @@
 -   fix unit format ([dd590ef](https://github.com/taoyage/react-mobile-ui/commit/dd590ef2fba004dcbfbcb1bba587010f24797ee7))
 -   optimize image component ([01acd68](https://github.com/taoyage/react-mobile-ui/commit/01acd68a87c5f3999fa0a62e6e0931f495bfbd7b))
 -   sass 头部添加变量引用链接 ([9f6fa8b](https://github.com/taoyage/react-mobile-ui/commit/9f6fa8b5fa6021d26ea912cb5a6485683d8e03d5))
+-   swiper 组件添加验证 ([3ca8be0](https://github.com/taoyage/react-mobile-ui/commit/3ca8be0297538d9481a2aacb49e304246909c87e))
 -   update mask component ([d9f8c81](https://github.com/taoyage/react-mobile-ui/commit/d9f8c810f7db3145fd3bacc2756fe912cb91ddc3))
 
 ### Features
