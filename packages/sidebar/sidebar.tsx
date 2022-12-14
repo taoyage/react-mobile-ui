@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
     items.push(child);
   });
 
-  const onSetActive = () => (e: React.MouseEvent<HTMLDivElement>) => {
+  const onSetActive = (e: React.MouseEvent<HTMLDivElement>) => {
     const key = (e.target as HTMLElement).dataset['key'];
     setActiveKey(key as string);
     props.onChange?.(key as string);
