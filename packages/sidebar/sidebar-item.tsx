@@ -3,13 +3,12 @@ import React from 'react';
 export interface SidebarItemProps {
   key: string;
   title: React.ReactNode;
-  className?: string;
   children: React.ReactNode;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = React.memo((props) => {
-  return props.children as React.ReactElement;
-});
+const SidebarItem: React.FC<SidebarItemProps> = (props) => {
+  return props.children ? (props.children as React.ReactElement) : null;
+};
 
 SidebarItem.displayName = 'SidebarItem';
 

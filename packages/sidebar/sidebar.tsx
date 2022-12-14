@@ -2,13 +2,17 @@ import React from 'react';
 import cx from 'classnames';
 
 import SidebarItem from '@/sidebar/sidebar-item';
+import { traverseReactNode } from '@/utils/traverse-react-node';
 
 import './styles/index.scss';
 
 export interface SidebarProps {
+  /** 当前激活side item面板的key */
   activeKey: string;
+  /** 点击side item切换后回调 */
   onChange?: (key: string) => void;
   children?: React.ReactNode;
+  /** 基本样式 */
   style?: React.CSSProperties &
     Partial<
       Record<'--width' | '--height' | '--background-color' | '--content-padding' | '--sidebar-item-padding', string>
@@ -22,20 +26,17 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
 
   const items: React.ReactElement<React.ComponentProps<typeof SidebarItem>>[] = [];
 
-  React.Children.forEach(props.children, (child) => {
+  traverseReactNode(props.children, (child) => {
     if (!React.isValidElement(child)) return;
     if (!child.key) return;
     items.push(child);
   });
 
-  const onSetActive = React.useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      const key = (e.target as HTMLElement).dataset['key'];
-      setActiveKey(key as string);
-      props.onChange?.(key as string);
-    },
-    [props.onChange]
-  );
+  const onSetActive = () => (e: React.MouseEvent<HTMLDivElement>) => {
+    const key = (e.target as HTMLElement).dataset['key'];
+    setActiveKey(key as string);
+    props.onChange?.(key as string);
+  };
 
   return (
     <div className={classPrefix}>

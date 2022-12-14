@@ -3,6 +3,7 @@ $class-prefix-input: 'ygm-input';
 .#{$class-prefix-input} {
   --color: var(--ygm-color-text);
   --placeholder-color: var(--ygm-color-light);
+
   --text-align: left;
   --background-color: transparent;
   --font-size: var(--ygm-font-size-m);
