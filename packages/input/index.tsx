@@ -90,7 +90,7 @@ const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
         ref={nativeInputRef}
         id={props.id}
         style={props.style}
-        className={`${classPrefix}-element`}
+        className={cx(`${classPrefix}-element`, props.className)}
         placeholder={props.placeholder}
         autoFocus={props.autoFocus}
         value={value}
