@@ -27,7 +27,7 @@ const Divider: React.FC<DividerProps> = (props) => {
         [`${classPrefix}-dashed`]: props.dashed,
       })}
     >
-      {props.children}
+      {props.children && <div className={`${classPrefix}-content`}>{props.children}</div>}
     </div>
   );
 };

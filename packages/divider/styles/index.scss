@@ -55,18 +55,8 @@ $class-prefix-divider: 'ygm-divider';
     border-style: dashed;
   }
 
-  &-center,
-  &-left,
-  &-right {
-    &::before {
-      content: '';
-      margin-right: var(--ygm-padding-l);
-    }
-
-    &::after {
-      margin-left: var(--ygm-padding-l);
-      content: '';
-    }
+  &-content {
+    padding: 0 var(--ygm-padding-l);
   }
 
   &-left {

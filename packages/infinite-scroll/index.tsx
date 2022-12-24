@@ -7,10 +7,13 @@ import useLockFn from '@/hooks/useLockFn';
 import './styles/index.scss';
 
 export interface InfiniteScrollProps {
+  /** 是否加载更多 */
   hasMore: boolean;
+  /** 加载数据方法 */
   loadMore: () => Promise<void>;
-  children: React.ReactNode;
+  /** 自定义底部样式 */
   footer?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const classPrefix = `ygm-infinite-scroll`;
@@ -34,7 +37,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = React.memo((props) => {
   }, [check]);
 
   return (
-    <div className={classPrefix} style={{ position: 'relative' }}>
+    <div className={classPrefix}>
       {props.children}
 
       <div className={`${classPrefix}-load`} ref={intersectionEleRef}>

@@ -1,5 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
+
+// 它基于弹簧物理原理实现，他的核心理念就是
+// 使我们元素的动画轨迹和真实世界更接近
 import { useSpring, animated } from '@react-spring/web';
 
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
@@ -31,7 +34,7 @@ export interface PopupProps {
 
 const classPrefix = 'ygm-popup';
 
-const Popup: React.FC<PopupProps> = React.memo((props) => {
+const Popup: React.FC<PopupProps> = (props) => {
   const [active, setActive] = React.useState<boolean>(props.visible);
 
   useScrollLock(props.visible);
@@ -39,9 +42,13 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
   const { percent } = useSpring({
     percent: props.visible ? 0 : 100,
     config: {
+      // 精确度
       precision: 0.1,
+      // 弹簧质量，mass的值越大，动画执行的速度也会随着执行的时间变得越变越快
       mass: 0.4,
+      // 弹簧张力
       tension: 300,
+      // 表示摩擦力和阻力
       friction: 30,
     },
     onRest: () => {
@@ -61,7 +68,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
   }, [props.visible]);
 
   return (
-    <div className={classPrefix} style={{ display: active ? undefined : 'none' }}>
+    <div className={classPrefix}>
       {props.mask && <Mask visible={props.visible} onMaskClick={props.onMaskClick} />}
 
       <animated.div
@@ -89,7 +96,7 @@ const Popup: React.FC<PopupProps> = React.memo((props) => {
       </animated.div>
     </div>
   );
-});
+};
 
 Popup.defaultProps = {
   visible: false,

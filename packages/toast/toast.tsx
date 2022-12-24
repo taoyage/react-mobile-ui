@@ -7,12 +7,19 @@ import SpinnerLoading from '@/spinner-loading';
 import './styles/index.scss';
 
 export interface ToastProps {
+  /** 提示持续时间 */
   duration?: number;
-  content: string;
+  /** Toast文本内容 */
+  content: React.ReactNode;
+  /** Toast关闭后的回调 */
   afterClose?: () => void;
+  /** 卸载当前Toast的DOM */
   unmount?: () => void;
+  /** Toast图标 */
   icon?: 'success' | 'fail' | 'loading' | React.ReactNode;
 }
+
+const classPrefix = 'ygm-toast';
 
 const Toast: React.FC<ToastProps> = React.memo(({ icon, duration, content, afterClose, unmount }) => {
   const [_, setVisible] = React.useState<boolean>(true);
@@ -33,8 +40,8 @@ const Toast: React.FC<ToastProps> = React.memo(({ icon, duration, content, after
 
   React.useEffect(() => {
     const timer = window.setTimeout(() => {
-      unmount?.();
       setVisible(false);
+      unmount?.();
     }, duration);
 
     return () => clearTimeout(timer);
@@ -47,10 +54,10 @@ const Toast: React.FC<ToastProps> = React.memo(({ icon, duration, content, after
   }, [afterClose]);
 
   return (
-    <div className="ygm-toast">
-      <div className={cx('ygm-toast-main', icon ? `ygm-toast-main-icon` : 'ygm-toast-main-text')}>
-        {iconElement && <div className="ygm-toast-icon">{iconElement}</div>}
-        <div className="ygm-toast-text">{content}</div>
+    <div className={classPrefix}>
+      <div className={cx(`${classPrefix}-main`, icon ? `${classPrefix}-main-icon` : `${classPrefix}-main-text`)}>
+        {iconElement && <div className={`${classPrefix}-icon`}>{iconElement}</div>}
+        <div className={`${classPrefix}-text`}>{content}</div>
       </div>
     </div>
   );
