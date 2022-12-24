@@ -8,6 +8,7 @@ export type DialogConfirmProps = Omit<DialogProps, 'visible' | 'closeOnAction' |
   cancelText?: React.ReactNode;
   onConfirm?: () => void | Promise<void>;
   onCancel?: () => void | Promise<void>;
+  onClose?: () => void;
 };
 
 const confirm = (props: DialogConfirmProps) => {
