@@ -12,6 +12,7 @@ const renderImperatively = (element: React.ReactElement<ElementProps>) => {
     const [visible, setVisible] = React.useState(false);
 
     const onClose = () => {
+      element.props?.onClose?.();
       setVisible(false);
     };
 

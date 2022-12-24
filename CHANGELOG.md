@@ -1,4 +1,4 @@
-# 1.8.0 (2022-12-24)
+## 1.8.1 (2022-12-24)
 
 ### Bug Fixes
 
@@ -15,6 +15,7 @@
 -   fix code ([4c206b9](https://github.com/taoyage/react-mobile-ui/commit/4c206b9f541f8f0bae8f502541efcab514bfd0e8))
 -   fix code ([028ddf3](https://github.com/taoyage/react-mobile-ui/commit/028ddf34acf56a70fdee8f979d385b43bb6be0b2))
 -   fix demo style ([1ec5c3e](https://github.com/taoyage/react-mobile-ui/commit/1ec5c3e1e8218815f560502210e3795a831daa8d))
+-   fix dialog ([948dd6b](https://github.com/taoyage/react-mobile-ui/commit/948dd6b2ec963de17d61f292c901de671c46d4fd))
 -   fix error-block style ([4d6e528](https://github.com/taoyage/react-mobile-ui/commit/4d6e528eda3500f576e81451b9b953d821b95c56))
 -   fix error-block style ([be8660b](https://github.com/taoyage/react-mobile-ui/commit/be8660bbd4862efd83d62d8653bb19d43d36e249))
 -   fix global css variabale ([0c6b1ba](https://github.com/taoyage/react-mobile-ui/commit/0c6b1ba1f5b3ac0e442bc745a3528e4764a5890a))
