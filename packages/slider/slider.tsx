@@ -67,7 +67,8 @@ const Slider: React.FC<SliderProps> = (props) => {
   };
 
   const onEnd = (position: number) => {
-    props.onChangeAfter?.(position);
+    const targetValue = getValueByPosition(position);
+    props.onChangeAfter?.(targetValue);
   };
 
   return (
