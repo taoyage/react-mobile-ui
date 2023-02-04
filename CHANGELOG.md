@@ -1,4 +1,4 @@
-## 1.8.2 (2022-12-24)
+## 1.8.3 (2023-02-04)
 
 ### Bug Fixes
 
@@ -26,6 +26,7 @@
 -   fix popup animat ([28fbd3b](https://github.com/taoyage/react-mobile-ui/commit/28fbd3ba68080e60e8f5daa1a94d26bde90714b4))
 -   fix sidebar bug ([ecf668a](https://github.com/taoyage/react-mobile-ui/commit/ecf668a15bd33370409566a8893b7fe76b11aa02))
 -   fix sidebar onchange event ([65c58d1](https://github.com/taoyage/react-mobile-ui/commit/65c58d1ef3b914c34bcca03d016485005596bb4c))
+-   fix slider ([0ed4be3](https://github.com/taoyage/react-mobile-ui/commit/0ed4be3d929c63ef2a1074e3c0f758e7a577638a))
 -   fix space style ([5bae7c4](https://github.com/taoyage/react-mobile-ui/commit/5bae7c40b224ad095a9f5ec4f6242c61aaf9930f))
 -   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
 -   fix tabs props ([7cab6e9](https://github.com/taoyage/react-mobile-ui/commit/7cab6e940d35b98a1ec42c4af0482042ac43407b))
