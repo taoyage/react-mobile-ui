@@ -9,6 +9,7 @@ interface ThumbProps {
   disabled: boolean;
   trackRef: React.RefObject<HTMLDivElement>;
   onDrag: (value: number) => void;
+  onChangeAfter: (value: number) => void;
 }
 
 const classPrefix = 'ygm-slider-thumb';
@@ -17,6 +18,7 @@ const Thumb: React.FC<ThumbProps> = (props) => {
   const prevValue = React.useRef<number>(0);
 
   const startX = React.useRef(0);
+  const endX = React.useRef(0);
 
   const currentPosition = `${((props.value - props.min) / (props.max - props.min)) * 100}%`;
 
@@ -36,8 +38,13 @@ const Thumb: React.FC<ThumbProps> = (props) => {
 
     // 移动距离：总长度 = 移动的实际距离 ：实际距离
     const position = (deltaX / total) * (props.max - props.min);
+    const finalPosition = position + prevValue.current;
+    endX.current = finalPosition;
+    props.onDrag(finalPosition);
+  };
 
-    props.onDrag(position + prevValue.current);
+  const onTouchEnd = () => {
+    props?.onChangeAfter(endX.current);
   };
 
   return (
@@ -50,6 +57,7 @@ const Thumb: React.FC<ThumbProps> = (props) => {
       aria-valuenow={props.value}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       <div className={`${classPrefix}-button`} />
     </div>

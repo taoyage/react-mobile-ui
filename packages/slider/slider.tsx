@@ -66,6 +66,10 @@ const Slider: React.FC<SliderProps> = (props) => {
     props.onChange?.(targetValue);
   };
 
+  const onEnd = (position: number) => {
+    props.onChangeAfter?.(position);
+  };
+
   return (
     <div
       className={cx(classPrefix, { [`${classPrefix}-disabled`]: props.disabled })}
@@ -86,6 +90,7 @@ const Slider: React.FC<SliderProps> = (props) => {
         disabled={props.disabled!}
         trackRef={trackRef}
         onDrag={onDrag}
+        onChangeAfter={onEnd}
       />
     </div>
   );
