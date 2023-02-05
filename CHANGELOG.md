@@ -1,4 +1,4 @@
-## 1.8.5 (2023-02-05)
+## 1.8.6 (2023-02-05)
 
 ### Bug Fixes
 
@@ -13,6 +13,7 @@
 -   export hooks ([839150b](https://github.com/taoyage/react-mobile-ui/commit/839150b4d63d6fd176b745d5836a20487b7bb4bd))
 -   export inputRef && searchBarRef ([ff9ed8c](https://github.com/taoyage/react-mobile-ui/commit/ff9ed8cef6482ea7736e8e4f54f08b85b7c833b1))
 -   fix bug ([a681ecc](https://github.com/taoyage/react-mobile-ui/commit/a681ecc5909dd3d4cd73008e86afb892b283fcb4))
+-   fix button style ([fd18c30](https://github.com/taoyage/react-mobile-ui/commit/fd18c30811e1b468db19dce33231ec6bf46acfd3))
 -   fix button style ([51868ad](https://github.com/taoyage/react-mobile-ui/commit/51868ad3c8328f6539b7a43027fab177ac054f07))
 -   fix code ([4c206b9](https://github.com/taoyage/react-mobile-ui/commit/4c206b9f541f8f0bae8f502541efcab514bfd0e8))
 -   fix code ([028ddf3](https://github.com/taoyage/react-mobile-ui/commit/028ddf34acf56a70fdee8f979d385b43bb6be0b2))
