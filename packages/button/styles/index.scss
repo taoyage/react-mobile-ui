@@ -102,4 +102,8 @@ $class-prefix-button: 'ygm-button';
       opacity: 0.6;
     }
   }
+
+  &-disabled {
+    background-color: var(--ygm-color-weak);
+  }
 }
