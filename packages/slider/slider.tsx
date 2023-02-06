@@ -7,6 +7,10 @@ import { getValueByScope } from '@/utils/utils';
 
 import './styles/slider.scss';
 
+export interface SliderRef {
+  setValue: (value: number) => void;
+}
+
 export interface SliderProps {
   min?: number;
   max?: number;
@@ -21,10 +25,16 @@ export interface SliderProps {
 
 const classPrefix = 'ygm-slider';
 
-const Slider: React.FC<SliderProps> = (props) => {
+const Slider = React.forwardRef<SliderRef, SliderProps>((props, ref) => {
   const [sliderValue, setSliderValue] = React.useState<number>(getValueByScope(props.value!, props.min!, props.max!));
 
   const trackRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useImperativeHandle(ref, () => ({
+    setValue: (val: number) => {
+      setSliderValue(val);
+    },
+  }));
 
   // 滚动条值范围
   const scope = props.max! - props.min!;
@@ -95,7 +105,7 @@ const Slider: React.FC<SliderProps> = (props) => {
       />
     </div>
   );
-};
+});
 
 Slider.defaultProps = {
   min: 0,
