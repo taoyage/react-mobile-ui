@@ -69,7 +69,7 @@ export { default as Ellipsis } from '@/ellipsis';
 export type { SelectorProps } from '@/selector';
 export { default as Selector } from '@/selector';
 
-export type { SliderProps } from '@/slider';
+export type { SliderProps, SliderRef } from '@/slider';
 export { default as Slider } from '@/slider';
 
 export type { DialogProps, DialogAlertProps } from '@/dialog';
