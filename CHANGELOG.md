@@ -1,4 +1,4 @@
-## 1.8.8 (2023-02-06)
+## 1.8.9 (2023-02-06)
 
 ### Bug Fixes
 
@@ -32,6 +32,7 @@
 -   fix slider ([5cbdc2a](https://github.com/taoyage/react-mobile-ui/commit/5cbdc2a077bcc66bca07f81203ebd8de893cad3f))
 -   fix slider ([0ed4be3](https://github.com/taoyage/react-mobile-ui/commit/0ed4be3d929c63ef2a1074e3c0f758e7a577638a))
 -   fix slider props ([508102e](https://github.com/taoyage/react-mobile-ui/commit/508102ebbfa147fbc5c7469710a54347067a4fad))
+-   fix slider setValue ([5137c8b](https://github.com/taoyage/react-mobile-ui/commit/5137c8b3ae2c268b6b5938cc02b399d08892b730))
 -   fix space style ([5bae7c4](https://github.com/taoyage/react-mobile-ui/commit/5bae7c40b224ad095a9f5ec4f6242c61aaf9930f))
 -   fix tab display ([8dd9492](https://github.com/taoyage/react-mobile-ui/commit/8dd9492f387b15984ec52e5571e686e4fa597c13))
 -   fix tabs props ([7cab6e9](https://github.com/taoyage/react-mobile-ui/commit/7cab6e940d35b98a1ec42c4af0482042ac43407b))
