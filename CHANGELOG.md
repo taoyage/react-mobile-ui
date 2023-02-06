@@ -1,4 +1,4 @@
-## 1.8.6 (2023-02-05)
+## 1.8.7 (2023-02-06)
 
 ### Bug Fixes
 
@@ -9,6 +9,7 @@
 -   修复 swiper 动画闪动问题 && 补充 swiper 文档 ([faa1d69](https://github.com/taoyage/react-mobile-ui/commit/faa1d69eba7718f32cfcf9f45a2d762d172ee1f5))
 -   add mask props ([a6a58ae](https://github.com/taoyage/react-mobile-ui/commit/a6a58ae15a67a45565ac93a19a1ab83a1b005043))
 -   add ref to input components ([60ae0c0](https://github.com/taoyage/react-mobile-ui/commit/60ae0c0fef79cdf942de867e4df784419b532e18))
+-   add slider ref ([8343b1c](https://github.com/taoyage/react-mobile-ui/commit/8343b1c58ee230e4655f77c0fe0910b5052e5eed))
 -   change image drag to false ([fd74c1e](https://github.com/taoyage/react-mobile-ui/commit/fd74c1ef7a363549816f4b5b5d110c5cbf6d0663))
 -   export hooks ([839150b](https://github.com/taoyage/react-mobile-ui/commit/839150b4d63d6fd176b745d5836a20487b7bb4bd))
 -   export inputRef && searchBarRef ([ff9ed8c](https://github.com/taoyage/react-mobile-ui/commit/ff9ed8cef6482ea7736e8e4f54f08b85b7c833b1))
