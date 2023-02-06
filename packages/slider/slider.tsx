@@ -32,7 +32,7 @@ const Slider = React.forwardRef<SliderRef, SliderProps>((props, ref) => {
 
   React.useImperativeHandle(ref, () => ({
     setValue: (val: number) => {
-      setSliderValue(val);
+      setSliderValue(getValueByScope(val, props.min!, props.max!));
     },
   }));
 
